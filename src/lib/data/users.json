@@ -1,0 +1,423 @@
+[
+  {
+    "id": "1",
+    "username": "jesscarter",
+    "fullname": "Jessica Carter",
+    "email": "user1@example.com",
+    "location": "Los Angeles, CA",
+    "books": [
+      {
+        "bookId": "b9",
+        "status": "available",
+        "condition": "like new"
+      },
+      {
+        "bookId": "b5",
+        "status": "wanted"
+      },
+      {
+        "bookId": "b6",
+        "status": "wanted"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "username": "mthompson",
+    "fullname": "Michael Thompson",
+    "email": "user2@example.com",
+    "location": "Austin, TX",
+    "books": [
+      {
+        "bookId": "b5",
+        "status": "available",
+        "condition": "new"
+      },
+      {
+        "bookId": "b9",
+        "status": "wanted"
+      },
+      {
+        "bookId": "b10",
+        "status": "wanted"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "username": "emilynguyen",
+    "fullname": "Emily Nguyen",
+    "email": "user3@example.com",
+    "location": "New York, NY",
+    "books": [
+      {
+        "bookId": "b5",
+        "status": "available",
+        "condition": "like new"
+      },
+      {
+        "bookId": "b4",
+        "status": "wanted"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "username": "davidkim",
+    "fullname": "David Kim",
+    "email": "user4@example.com",
+    "location": "San Francisco, CA",
+    "books": [
+      {
+        "bookId": "b10",
+        "status": "available",
+        "condition": "like new"
+      },
+      {
+        "bookId": "b6",
+        "status": "available",
+        "condition": "like new"
+      },
+      {
+        "bookId": "b4",
+        "status": "wanted"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "username": "sophiamartinez",
+    "fullname": "Sophia Martinez",
+    "email": "user5@example.com",
+    "location": "Los Angeles, CA",
+    "books": [
+      {
+        "bookId": "b2",
+        "status": "available",
+        "condition": "acceptable"
+      },
+      {
+        "bookId": "b9",
+        "status": "available",
+        "condition": "good"
+      },
+      {
+        "bookId": "b10",
+        "status": "wanted"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "username": "chrislee",
+    "fullname": "Christopher Lee",
+    "email": "user6@example.com",
+    "location": "San Francisco, CA",
+    "books": [
+      {
+        "bookId": "b1",
+        "status": "available",
+        "condition": "new"
+      },
+      {
+        "bookId": "b8",
+        "status": "available",
+        "condition": "good"
+      },
+      {
+        "bookId": "b3",
+        "status": "wanted"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "username": "oliviajohnson",
+    "fullname": "Olivia Johnson",
+    "email": "user7@example.com",
+    "location": "Denver, CO",
+    "books": [
+      {
+        "bookId": "b10",
+        "status": "available",
+        "condition": "like new"
+      },
+      {
+        "bookId": "b2",
+        "status": "available",
+        "condition": "new"
+      },
+      {
+        "bookId": "b6",
+        "status": "wanted"
+      },
+      {
+        "bookId": "b3",
+        "status": "wanted"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "username": "mattperez",
+    "fullname": "Matthew Perez",
+    "email": "user8@example.com",
+    "location": "Miami, FL",
+    "books": [
+      {
+        "bookId": "b10",
+        "status": "available",
+        "condition": "acceptable"
+      },
+      {
+        "bookId": "b2",
+        "status": "available",
+        "condition": "like new"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "username": "avarobinson",
+    "fullname": "Ava Robinson",
+    "email": "user9@example.com",
+    "location": "New York, NY",
+    "books": [
+      {
+        "bookId": "b3",
+        "status": "available",
+        "condition": "like new"
+      },
+      {
+        "bookId": "b4",
+        "status": "wanted"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "username": "dansmith",
+    "fullname": "Daniel Smith",
+    "email": "user10@example.com",
+    "location": "Los Angeles, CA",
+    "books": [
+      {
+        "bookId": "b2",
+        "status": "available",
+        "condition": "good"
+      },
+      {
+        "bookId": "b9",
+        "status": "available",
+        "condition": "good"
+      },
+      {
+        "bookId": "b10",
+        "status": "wanted"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "username": "miaclark",
+    "fullname": "Mia Clark",
+    "email": "user11@example.com",
+    "location": "Chicago, IL",
+    "books": [
+      {
+        "bookId": "b1",
+        "status": "available",
+        "condition": "good"
+      },
+      {
+        "bookId": "b7",
+        "status": "wanted"
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "username": "benwright",
+    "fullname": "Benjamin Wright",
+    "email": "user12@example.com",
+    "location": "Los Angeles, CA",
+    "books": [
+      {
+        "bookId": "b10",
+        "status": "available",
+        "condition": "acceptable"
+      },
+      {
+        "bookId": "b2",
+        "status": "available",
+        "condition": "like new"
+      },
+      {
+        "bookId": "b8",
+        "status": "wanted"
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "username": "ellaking",
+    "fullname": "Ella King",
+    "email": "user13@example.com",
+    "location": "Seattle, WA",
+    "books": [
+      {
+        "bookId": "b4",
+        "status": "available",
+        "condition": "like new"
+      },
+      {
+        "bookId": "b2",
+        "status": "wanted"
+      },
+      {
+        "bookId": "b7",
+        "status": "wanted"
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "username": "williamscott",
+    "fullname": "William Scott",
+    "email": "user14@example.com",
+    "location": "Seattle, WA",
+    "books": [
+      {
+        "bookId": "b7",
+        "status": "available",
+        "condition": "acceptable"
+      },
+      {
+        "bookId": "b6",
+        "status": "available",
+        "condition": "like new"
+      },
+      {
+        "bookId": "b1",
+        "status": "wanted"
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "username": "graceturner",
+    "fullname": "Grace Turner",
+    "email": "user15@example.com",
+    "location": "Austin, TX",
+    "books": [
+      {
+        "bookId": "b5",
+        "status": "available",
+        "condition": "new"
+      },
+      {
+        "bookId": "b9",
+        "status": "wanted"
+      }
+    ]
+  },
+  {
+    "id": "16",
+    "username": "henryadams",
+    "fullname": "Henry Adams",
+    "email": "user16@example.com",
+    "location": "Portland, OR",
+    "books": [
+      {
+        "bookId": "b9",
+        "status": "available",
+        "condition": "good"
+      },
+      {
+        "bookId": "b3",
+        "status": "wanted"
+      }
+    ]
+  },
+  {
+    "id": "17",
+    "username": "chloebaker",
+    "fullname": "Chloe Baker",
+    "email": "user17@example.com",
+    "location": "New York, NY",
+    "books": [
+      {
+        "bookId": "b10",
+        "status": "available",
+        "condition": "good"
+      },
+      {
+        "bookId": "b5",
+        "status": "wanted"
+      }
+    ]
+  },
+  {
+    "id": "18",
+    "username": "jackmurphy",
+    "fullname": "Jack Murphy",
+    "email": "user18@example.com",
+    "location": "Denver, CO",
+    "books": [
+      {
+        "bookId": "b8",
+        "status": "available",
+        "condition": "like new"
+      },
+      {
+        "bookId": "b5",
+        "status": "wanted"
+      },
+      {
+        "bookId": "b3",
+        "status": "wanted"
+      }
+    ]
+  },
+  {
+    "id": "19",
+    "username": "lilyevans",
+    "fullname": "Lily Evans",
+    "email": "user19@example.com",
+    "location": "Chicago, IL",
+    "books": [
+      {
+        "bookId": "b5",
+        "status": "available",
+        "condition": "acceptable"
+      },
+      {
+        "bookId": "b3",
+        "status": "available",
+        "condition": "acceptable"
+      },
+      {
+        "bookId": "b6",
+        "status": "wanted"
+      }
+    ]
+  },
+  {
+    "id": "20",
+    "username": "samfoster",
+    "fullname": "Samuel Foster",
+    "email": "user20@example.com",
+    "location": "Portland, OR",
+    "books": [
+      {
+        "bookId": "b3",
+        "status": "available",
+        "condition": "new"
+      },
+      {
+        "bookId": "b4",
+        "status": "wanted"
+      }
+    ]
+  }
+]
