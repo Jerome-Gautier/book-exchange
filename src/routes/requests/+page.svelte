@@ -32,9 +32,9 @@
                         {#each request.requestedBooks as book, i}
                         {#if book}
                         <div>
-                            <div class="bg-white border border-gray-200 rounded p-3 pt-0">
-                                {#if request.offeredBook}
-                                <a href={`/books/${request.offeredBook.id}/requests`} class="block w-full text-right text-blue-600 hover:underline text-sm font-medium">
+                            <div class="bg-white border border-gray-200 rounded p-3">
+                                {#if book.requestsCount && request.offeredBook}
+                                <a href={`/books/${request.offeredBook.id}/requests`} class="float-right text-blue-600 hover:underline text-sm font-medium">
                                     Requests
                                     <span class="ml-1 bg-gray-700 text-white text-xs px-2 rounded-full">{book.requestsCount}</span>
                                 </a>
