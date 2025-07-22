@@ -419,5 +419,13 @@
         "status": "wanted"
       }
     ]
+  },
+  {
+    "id": "21",
+    "username": "Jerome Gautier",
+    "fullname": "Jerome Gautier",
+    "email": "jerome.gautier92@gmail.com",
+    "location": "Unknown",
+    "books": []
   }
 ]
