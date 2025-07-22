@@ -12,11 +12,15 @@ const handleDevtools: Handle = async ({ event, resolve }) => {
 }
 
 const authorizationHandle: Handle = async ({ event, resolve}) => {
-    if (event.url.pathname.startsWith('/api')) {
-        const session = await event.locals.auth();
+    const session = await event.locals.auth();
+    if (event.url.pathname.startsWith('/api') && event.url.pathname !== ('/api/add-user')) {
         if (!session) {
             throw redirect(303, '/users/login');
         }
+    }
+
+    if (event.url.pathname === '/users/login' && session){
+        throw redirect(303, '/books');
     }
     return resolve(event);
 }
