@@ -23,7 +23,6 @@ export const { handle, signIn, signOut } = SvelteKitAuth(async () => {
 					});
 					const data = await response.json();
 
-					console.log('User added:', data);
 					session.user.id = data.user.id;
 				}
 				return session;
