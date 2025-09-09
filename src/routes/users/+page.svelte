@@ -1,6 +1,6 @@
 <script lang="ts">
     let { data } = $props();
-    const users = data.users || [];
+    const { users } = data || [];
 </script>
 
 <div class="max-w-3xl mx-auto mt-10">
@@ -13,10 +13,12 @@
                     <p class="text-gray-500">Location: {user.location}</p>
                 </div>
                 <div class="flex flex-row gap-2 mt-4 md:mt-0">
-                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded text-sm font-medium">Books: {user.booksCount}</span>
-                    {#if user.requestsCount > 0}
+                    {#if user.booksAmount > 0}
+                        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded text-sm font-medium">Books: {user.booksAmount}</span>
+                    {/if}
+                    {#if user.incomingRequests > 0}
                         <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded text-sm font-medium">
-                            Incoming requests: {user.requestsCount}
+                            Incoming requests: {user.incomingRequests}
                         </span>
                     {/if}
                 </div>

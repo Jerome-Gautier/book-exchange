@@ -18,10 +18,9 @@ export async function POST({ request }) {
         user = {
             id: (users.length + 1).toString(),
             username: newUser.name,
-            fullname: newUser.name,
+            fullname: newUser.fullname || 'Unknown',
             email: newUser.email,
-            location: 'Unknown',
-            books: [],
+            location: newUser.location || 'Unknown',
         };
 
         users.push(user);

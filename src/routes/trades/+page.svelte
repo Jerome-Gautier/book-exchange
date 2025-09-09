@@ -1,6 +1,6 @@
 <script lang="ts">
-	let { data } = $props();
-  const trades = data.trades || [];
+    let { data } = $props();
+    const { trades } = data || [];
 </script>
 
 <div class="max-w-4xl m-8 border-2 border-gray-300 mx-auto">
@@ -9,19 +9,19 @@
     </div>
     <div>
         {#each trades as trade}
-            {#if 'fromUser' in trade && 'toUser' in trade}
+            {#if 'fromId' in trade && 'toId' in trade}
                 <div class="bg-gray-100 border border-gray-300 rounded p-4 mb-4">
                     <div class="flex flex-row">
                         <!-- Gives -->
                         <div class="w-1/2 pr-4 border-r border-gray-300">
                             <div class="mb-2">
-                                <a href={`/users/${trade.fromUser.id}`} class="text-blue-600 hover:underline font-medium">{trade.fromUser.username}</a>
+                                <a href={`/users/${trade.fromId}`} class="text-blue-600 hover:underline font-medium">{trade.fromUsername}</a>
                                 <span class="text-gray-600"> gets:</span>
                             </div>
                             <div class="bg-white border border-gray-200 rounded p-3">
-                                {#if trade.offeredBook}
-                                    <div class="font-semibold">{trade.offeredBook.title}</div>
-                                    <div class="text-gray-600">{trade.offeredBook.author}</div>
+                                {#if trade.bookTaken}
+                                    <div class="font-semibold">{trade.bookTaken.title}</div>
+                                    <div class="text-gray-600">{trade.bookTaken.author}</div>
                                 {:else}
                                     <div class="text-red-600">No offered book</div>
                                 {/if}
@@ -30,14 +30,14 @@
                         <!-- Takes -->
                         <div class="w-1/2 pl-4">
                             <div class="mb-2">
-                                <a href={`/users/${trade.toUser.id}`} class="text-blue-600 hover:underline font-medium">{trade.toUser.username}</a>
+                                <a href={`/users/${trade.toId}`} class="text-blue-600 hover:underline font-medium">{trade.toUsername}</a>
                                 <span class="text-gray-600"> gets:</span>
                             </div>
                             <div>
                                 <div class="bg-white border border-gray-200 rounded p-3">
-                                    {#if trade.requestedBook}
-                                        <div class="font-semibold">{trade.requestedBook.title}</div>
-                                        <div class="text-gray-600">{trade.requestedBook.author}</div>
+                                    {#if trade.bookGiven}
+                                        <div class="font-semibold">{trade.bookGiven.title}</div>
+                                        <div class="text-gray-600">{trade.bookGiven.author}</div>
                                     {:else}
                                         <div class="text-red-600">No requested book</div>
                                     {/if}

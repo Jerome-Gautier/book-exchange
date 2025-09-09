@@ -1,110 +1,226 @@
 [
   {
-    "id": "t1",
-    "fromUserId": "1",
-    "toUserId": "2",
-    "offeredBookId": "b9",
-    "requestedBookId": "b5",
-    "status": "pending",
-    "createdAt": "2025-07-10T14:23:00Z"
+    "id": "t1725792000000",
+    "fromId": "1",
+    "toId": "2",
+    "bookGiven": {
+      "title": "Brave New World",
+      "author": "Aldous Huxley"
+    },
+    "bookTaken": {
+      "title": "Dune",
+      "author": "Frank Herbert"
+    },
+    "timestamp": "2025-07-01T10:00:00Z"
   },
   {
-    "id": "t2",
-    "fromUserId": "3",
-    "toUserId": "4",
-    "offeredBookId": "b5",
-    "requestedBookId": "b10",
-    "status": "accepted",
-    "createdAt": "2025-07-09T10:15:00Z"
+    "id": "t1725795600000",
+    "fromId": "2",
+    "toId": "3",
+    "bookGiven": {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee"
+    },
+    "bookTaken": {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen"
+    },
+    "timestamp": "2025-07-01T11:00:00Z"
   },
   {
-    "id": "t3",
-    "fromUserId": "5",
-    "toUserId": "6",
-    "offeredBookId": "b2",
-    "requestedBookId": "b1",
-    "status": "pending",
-    "createdAt": "2025-07-08T09:45:00Z"
+    "id": "t1725799200000",
+    "fromId": "3",
+    "toId": "4",
+    "bookGiven": {
+      "title": "Jurassic Park",
+      "author": "Michael Crichton"
+    },
+    "bookTaken": {
+      "title": "Fahrenheit 451",
+      "author": "Ray Bradbury"
+    },
+    "timestamp": "2025-07-01T12:00:00Z"
   },
   {
-    "id": "t4",
-    "fromUserId": "7",
-    "toUserId": "8",
-    "offeredBookId": "b2",
-    "requestedBookId": "b10",
-    "status": "declined",
-    "createdAt": "2025-07-07T16:30:00Z"
+    "id": "t1725802800000",
+    "fromId": "4",
+    "toId": "5",
+    "bookGiven": {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald"
+    },
+    "bookTaken": {
+      "title": "Jurassic Park",
+      "author": "Michael Crichton"
+    },
+    "timestamp": "2025-07-01T13:00:00Z"
   },
   {
-    "id": "t5",
-    "fromUserId": "9",
-    "toUserId": "10",
-    "offeredBookId": "b3",
-    "requestedBookId": "b2",
-    "status": "pending",
-    "createdAt": "2025-07-06T12:00:00Z"
+    "id": "t1725806400000",
+    "fromId": "5",
+    "toId": "6",
+    "bookGiven": {
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari"
+    },
+    "bookTaken": {
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien"
+    },
+    "timestamp": "2025-07-01T14:00:00Z"
   },
   {
-    "id": "t6",
-    "fromUserId": "11",
-    "toUserId": "12",
-    "offeredBookId": "b1",
-    "requestedBookId": "b10",
-    "status": "accepted",
-    "createdAt": "2025-07-05T18:20:00Z"
+    "id": "t1725810000000",
+    "fromId": "6",
+    "toId": "7",
+    "bookGiven": {
+      "title": "The Lost World",
+      "author": "Michael Crichton"
+    },
+    "bookTaken": {
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger"
+    },
+    "timestamp": "2025-07-01T15:00:00Z"
   },
   {
-    "id": "t7",
-    "fromUserId": "13",
-    "toUserId": "14",
-    "offeredBookId": "b4",
-    "requestedBookId": "b7",
-    "status": "pending",
-    "createdAt": "2025-07-04T11:10:00Z"
+    "id": "t1725813600000",
+    "fromId": "7",
+    "toId": "8",
+    "bookGiven": {
+      "title": "Jurassic Park",
+      "author": "Michael Crichton"
+    },
+    "bookTaken": {
+      "title": "Moby-Dick",
+      "author": "Herman Melville"
+    },
+    "timestamp": "2025-07-01T16:00:00Z"
   },
   {
-    "id": "t8",
-    "fromUserId": "15",
-    "toUserId": "16",
-    "offeredBookId": "b5",
-    "requestedBookId": "b9",
-    "status": "pending",
-    "createdAt": "2025-07-03T13:55:00Z"
+    "id": "t1725817200000",
+    "fromId": "8",
+    "toId": "9",
+    "bookGiven": {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald"
+    },
+    "bookTaken": {
+      "title": "1984",
+      "author": "George Orwell"
+    },
+    "timestamp": "2025-07-01T17:00:00Z"
   },
   {
-    "id": "t9",
-    "fromUserId": "17",
-    "toUserId": "18",
-    "offeredBookId": "b10",
-    "requestedBookId": "b8",
-    "status": "declined",
-    "createdAt": "2025-07-02T15:40:00Z"
+    "id": "t1725820800000",
+    "fromId": "9",
+    "toId": "10",
+    "bookGiven": {
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien"
+    },
+    "bookTaken": {
+      "title": "Brave New World",
+      "author": "Aldous Huxley"
+    },
+    "timestamp": "2025-07-01T18:00:00Z"
   },
   {
-    "id": "t10",
-    "fromUserId": "19",
-    "toUserId": "20",
-    "offeredBookId": "b5",
-    "requestedBookId": "b3",
-    "status": "pending",
-    "createdAt": "2025-07-01T17:25:00Z"
+    "id": "t1725824400000",
+    "fromId": "10",
+    "toId": "11",
+    "bookGiven": {
+      "title": "Brave New World",
+      "author": "Aldous Huxley"
+    },
+    "bookTaken": {
+      "title": "The Lost World",
+      "author": "Michael Crichton"
+    },
+    "timestamp": "2025-07-01T19:00:00Z"
   },
   {
-    "id": "t11",
-    "fromUserId": "2",
-    "toUserId": "5",
-    "offeredBookId": "b5",
-    "requestedBookId": "b9",
-    "status": "accepted",
-    "createdAt": "2025-06-30T19:10:00Z"
+    "id": "t1725828000000",
+    "fromId": "11",
+    "toId": "12",
+    "bookGiven": {
+      "title": "1984",
+      "author": "George Orwell"
+    },
+    "bookTaken": {
+      "title": "Jurassic Park",
+      "author": "Michael Crichton"
+    },
+    "timestamp": "2025-07-01T20:00:00Z"
   },
   {
-    "id": "t12",
-    "fromUserId": "8",
-    "toUserId": "11",
-    "offeredBookId": "b10",
-    "requestedBookId": "b1",
-    "status": "pending",
-    "createdAt": "2025-06-29T21:05:00Z"
+    "id": "t1725831600000",
+    "fromId": "12",
+    "toId": "13",
+    "bookGiven": {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald"
+    },
+    "bookTaken": {
+      "title": "Dune",
+      "author": "Frank Herbert"
+    },
+    "timestamp": "2025-07-01T21:00:00Z"
+  },
+  {
+    "id": "t1725835200000",
+    "fromId": "13",
+    "toId": "14",
+    "bookGiven": {
+      "title": "Jurassic Park",
+      "author": "Michael Crichton"
+    },
+    "bookTaken": {
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien"
+    },
+    "timestamp": "2025-07-01T22:00:00Z"
+  },
+  {
+    "id": "t1725838800000",
+    "fromId": "14",
+    "toId": "15",
+    "bookGiven": {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee"
+    },
+    "bookTaken": {
+      "title": "Moby-Dick",
+      "author": "Herman Melville"
+    },
+    "timestamp": "2025-07-01T23:00:00Z"
+  },
+  {
+    "id": "t1725842400000",
+    "fromId": "15",
+    "toId": "16",
+    "bookGiven": {
+      "title": "Moby-Dick",
+      "author": "Herman Melville"
+    },
+    "bookTaken": {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen"
+    },
+    "timestamp": "2025-07-02T00:00:00Z"
+  },
+  {
+    "id": "t1757429763435",
+    "fromId": "21",
+    "toId": "5",
+    "bookGiven": {
+      "title": "Jurassic Park",
+      "author": "Michael Crichton"
+    },
+    "bookTaken": {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald"
+    },
+    "timestamp": "2025-09-09T14:56:03.435Z"
   }
 ]

@@ -2,7 +2,16 @@ export type Book = {
 	id: string;
 	title: string;
 	author: string;
+    condition: string;
+    ownerId: string;
+    status: 'available' | 'wanted';
 };
+
+export type BookOwner = {
+    id: string;
+    location: string;
+    username: string;
+}
 
 export type User = {
     id: string;
@@ -15,6 +24,19 @@ export type User = {
 
 export type UserBook = {
     bookId: string;
-    status: 'available' | 'wanted' | 'pending';
-    condition?: 'new' | 'like new' | 'good' | 'acceptable';
+    status: 'available' | 'wanted';
+    condition: string;
 };
+
+export type BookRequest = {
+    id: string;
+    fromUserId: string;
+    offeredBooksIds: string[];
+    requestedBooks: RequestedBook[];
+    createdAt: string;
+}
+
+export type RequestedBook = {
+    id: string;
+    ownerId: string;
+}

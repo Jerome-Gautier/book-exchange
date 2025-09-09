@@ -1,6 +1,6 @@
 <script>
     let { data } = $props();
-    const user = data.user;
+    const { user } = data;
 </script>
 
 {#if user}

@@ -1,10 +1,13 @@
 <script lang="ts">
     import { page } from '$app/state';
 	import { signOut } from '@auth/sveltekit/client';
+
+    export let requestsCount: number = 0;
     
     let session = page.data.session;
 
-    let showDropdown = false;
+    let showRequestsDropdown = false;
+    let showUserDropdown = false;
 </script>
 
 <nav class="bg-gray-800 text-white px-6 py-3 shadow">
@@ -18,7 +21,49 @@
                     <a class="hover:text-blue-400 transition" href="/books">Books</a>
                 </li>
                 <li>
-                    <a class="hover:text-blue-400 transition" href="/requests">Requests</a>
+                    {#if !session}
+                        <a class="hover:text-blue-400 transition" href="/requests">Requests</a>
+                    {:else if session.user}
+                        <div class="relative group inline-block">
+                            <a href="/requests">
+                                <button
+                                    class="hover:text-blue-400 transition"
+                                    onmouseenter={() => showRequestsDropdown = true}
+                                    onmouseleave={() => showRequestsDropdown = false}
+                                >
+                                    Requests
+                                    {#if requestsCount > 0}
+                                        <span class="ml-1 bg-red-500 text-white text-xs px-2 rounded-full">{requestsCount}</span>
+                                    {/if}
+                                </button>
+                            </a>
+                            <ul
+                                class="absolute left-0 w-56 bg-white text-gray-800 rounded shadow-lg border border-gray-200 z-10"
+                                onmouseenter={() => showRequestsDropdown = true}
+                                onmouseleave={() => showRequestsDropdown = false}
+                                class:hidden={!showRequestsDropdown}
+                            >
+                                <li>
+                                    <a class="block px-4 py-2 hover:bg-gray-100" href={`/requests`}>
+                                        All Requests
+                                    </a>
+                                </li>
+                                {#if requestsCount > 0}
+                                <li>
+                                    <a class="block px-4 py-2 hover:bg-gray-100" href={`/requests/incoming`}>
+                                        Incoming Requests
+                                        <span class="ml-1 bg-red-500 text-white text-xs px-2 rounded-full">{requestsCount}</span>
+                                    </a>
+                                </li>
+                                {/if}
+                                <li>
+                                    <a class="block px-4 py-2 hover:bg-gray-100" href={`/requests/new`}>
+                                        Create Request
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    {/if}
                 </li>
                 <li>
                     <a class="hover:text-blue-400 transition" href="/trades">Trades</a>
@@ -31,22 +76,22 @@
         <div>
             {#if !session}
                 <a class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 rounded transition font-medium" href="/users/login">
-                Login
-            </a>
+                    Login
+                </a>
             {:else if session.user}
                 <div class="relative group inline-block">
                     <button
                         class="font-semibold px-4 py-1 rounded bg-gray-700 hover:bg-gray-600 transition"
-                        onmouseenter={() => showDropdown = true}
-                        onmouseleave={() => showDropdown = false}
+                        onmouseenter={() => showUserDropdown = true}
+                        onmouseleave={() => showUserDropdown = false}
                     >
                         {session.user.name}
                     </button>
                     <ul
                         class="absolute right-0 w-48 bg-white text-gray-800 rounded shadow-lg border border-gray-200 z-10"
-                        onmouseenter={() => showDropdown = true}
-                        onmouseleave={() => showDropdown = false}
-                        class:hidden={!showDropdown}
+                        onmouseenter={() => showUserDropdown = true}
+                        onmouseleave={() => showUserDropdown = false}
+                        class:hidden={!showUserDropdown}
                     >
                         <li>
                             <a class="block px-4 py-2 hover:bg-gray-100" href={`/users/${session.user.id}`}>
@@ -54,12 +99,12 @@
                             </a>
                         </li>
                         <li>
-                            <a class="block px-4 py-2 hover:bg-gray-100" href={`/users/${session.user.id}`}>
+                            <a class="block px-4 py-2 hover:bg-gray-100" href={`/users/edit`}>
                                 Edit Profile
                             </a>
                         </li>
                         <li>
-                            <a class="block px-4 py-2 hover:bg-gray-100" href={`/users/${session.user.id}/books`}>
+                            <a class="block px-4 py-2 hover:bg-gray-100" href={`/books/my`}>
                                 My Books
                             </a>
                         </li>

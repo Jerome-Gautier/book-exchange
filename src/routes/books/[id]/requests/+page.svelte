@@ -1,7 +1,8 @@
 <script lang="ts">
     let { data } = $props();
     const book: any = data.book;
-    const requests: any[] = data.requests ?? [];
+    const { requests } = data;
+    console.log(requests);
 </script>
 
 {#if book}
@@ -22,11 +23,13 @@
                             <a href={`/users/${request.fromUser.id}`} class="text-blue-600 hover:underline font-medium">{request.fromUser.username}</a>
                             <span class="text-gray-600"> wants to give:</span>
                         </div>
-                        {#if request.offeredBook}
+                        {#if request.offeredBooks}
+                        {#each request.offeredBooks as book}
                         <div class="bg-white border border-gray-200 rounded p-3">
-                            <div class="font-semibold">{request.offeredBook.title}</div>
-                            <div class="text-gray-600">{request.offeredBook.author}</div>
+                            <div class="font-semibold">{book.title}</div>
+                            <div class="text-gray-600">{book.author}</div>
                         </div>
+                        {/each}
                         {/if}
                     </div>
                     <!-- Takes -->
@@ -34,13 +37,15 @@
                         <div class="mb-2">
                             <span class="text-gray-600">and wants to take:</span>
                         </div>
-                        {#if book}
-                        <div>
-                            <div class="bg-white border border-gray-200 rounded p-3">
-                                <div class="font-semibold">{book.title}</div>
-                                <div class="text-gray-600">{book.author}</div>
+                        {#if request.requestedBooks}
+                            {#each request.requestedBooks as book}
+                            <div>
+                                <div class="bg-white border border-gray-200 rounded p-3">
+                                    <div class="font-semibold">{book.title} <span class="font-light">from</span><a href={`/users/${book.ownerId}`} class="text-blue-500 ml-1">{book.ownerUsername}</a></div>
+                                    <div class="text-gray-600">{book.author}</div>
+                                </div>
                             </div>
-                        </div>
+                            {/each}
                         {/if}
                     </div>
                 </div>

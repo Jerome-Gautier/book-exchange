@@ -14,7 +14,7 @@ export const { handle, signIn, signOut } = SvelteKitAuth(async () => {
 		callbacks: {
 			async session({ session }: { session: import('@auth/sveltekit').Session }) {
 				if (session && session.user) {
-					const response = await fetch('http://localhost:5173/api/add-user', {
+					const response = await fetch('http://localhost:5173/api/users/add-user', {
 						method: 'POST',
 						headers: {
 							'Content-Type': 'application/json'

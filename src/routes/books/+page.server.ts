@@ -1,38 +1,26 @@
-import books from '$lib/data/books.json';
-import users from '$lib/data/users.json';
-import trades from '$lib/data/trades.json';
+export async function load({ fetch, cookies }) {
+	const requestedBooks = JSON.parse(cookies.get('requestedBooks') || '[]');
 
-export function load() {
-	const availableBooks = [];
-	const bookMap = new Map(books.map((b) => [b.id, b]));
-	for (const user of users) {
-		if (!user.books || user.books.length === 0) {
-			continue;
+	const response = await fetch('/api/books');	
+	const { availableBooks } = await response.json();
+
+	// normalize requestedBooks from cookie to an array of ids (supports ['b101'] or [{id:'b101'}])
+	const selectedIds = Array.isArray(requestedBooks)
+		? requestedBooks.map((rb) => (typeof rb === 'string' ? rb : rb && rb.id ? rb.id : null)).filter(Boolean)
+		: [];
+
+	if (selectedIds.length > 0 && Array.isArray(availableBooks)) {
+		const selectedSet = new Set(selectedIds);
+		const requestedFirst = availableBooks.filter((b) => selectedSet.has(b.id));
+		const others = availableBooks.filter((b) => !selectedSet.has(b.id));
+		return {
+			availableBooks: [...requestedFirst, ...others],
+			selection: requestedBooks
 		};
-		for (const entry of user.books) {
-			if (entry.status === 'available' || entry.status === 'wanted') {
-				availableBooks.push({
-					...bookMap.get(entry.bookId),
-					condition: entry.condition,
-					owner: {
-						id: user.id,
-						username: user.username,
-						location: user.location
-					},
-					trades: trades
-						.filter((trade) => trade.requestedBookId === entry.bookId && trade.status === 'pending')
-						.map((trade) => ({
-							bookId: trade.requestedBookId,
-							tradeId: trade.id,
-							fromUserId: trade.fromUserId,
-							fromUsername: users.find((u) => u.id === trade.fromUserId)?.username || 'Unknown'
-						}))
-				});
-			}
-		}
 	}
 
 	return {
-		availableBooks
-	}
+		availableBooks,
+		selection: requestedBooks
+	};
 }

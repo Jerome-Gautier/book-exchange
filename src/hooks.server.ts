@@ -3,6 +3,8 @@ import { redirect, type Handle } from '@sveltejs/kit';
 import { handle as authenticationHandle } from './auth';
 import { sequence } from '@sveltejs/kit/hooks';
 
+const restrictedRoutes = ['/books/my','/users/edit', '/requests/incoming'];
+
 const handleDevtools: Handle = async ({ event, resolve }) => {
     if (dev && event.url.pathname === '/.well-known/appspecific/com.chrome.devtools.json') {
         return new Response(undefined, { status: 404 });
@@ -13,7 +15,8 @@ const handleDevtools: Handle = async ({ event, resolve }) => {
 
 const authorizationHandle: Handle = async ({ event, resolve}) => {
     const session = await event.locals.auth();
-    if (event.url.pathname.startsWith('/api') && event.url.pathname !== ('/api/add-user')) {
+
+    if (restrictedRoutes.some(route => event.url.pathname.startsWith(route))) {
         if (!session) {
             throw redirect(303, '/users/login');
         }

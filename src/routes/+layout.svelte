@@ -2,9 +2,9 @@
 	import Navbar from '$lib/components/navbar.svelte';
 	import '../app.css';
 
-	let { children } = $props();
+	let { children, data } = $props();
 </script>
 
-<Navbar />
+<Navbar requestsCount={data.requestsCount} />
 
 {@render children()}
