@@ -26,6 +26,5 @@ export async function load({ cookies, fetch }) {
 		rbData = await rbResponse.json();
 	}
 
-	// Fetch complete data from DB or API
 	return { offeredBooks: obData.availableBooks, requestedBooks: rbData.availableBooks };
 }

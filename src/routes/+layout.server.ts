@@ -1,15 +1,36 @@
 import type { LayoutServerLoad } from './$types';
 
-export const load: LayoutServerLoad = async ({ fetch, locals }) => {
-  const session = await locals.auth();
-  let requestsCount;
+import RequestModel from '$db/models/Request.js';
+import mongoose from 'mongoose';
 
-  if (session?.user?.id) {
-    requestsCount = await fetch('/api/requests/incoming/count?userId=' + session.user.id).then(res => res.json()).then(data => data.count || 0);
-  }
+export const load: LayoutServerLoad = async ({ locals }) => {
+	const session = await locals.auth();
+	let requestsCount;
 
-  return {
-    session,
-    requestsCount
-  };
+	if (session?.user?.id) {
+		try {
+			const userId = session.user.id;
+			const oid = mongoose.Types.ObjectId.isValid(userId)
+				? new mongoose.Types.ObjectId(userId)
+				: null;
+
+			const matchField = oid ? oid : userId;
+			const agg = await RequestModel.aggregate([
+				{ $unwind: '$requestBooks' },
+				{ $match: { 'requestedBooks.owner': matchField } },
+				{ $group: { _id: '$requestedBooks.book' } },
+				{ $count: 'count' }
+			]).exec();
+
+			requestsCount = (agg[0] && agg[0].count) || 0;
+		} catch (err) {
+			console.error('Error counting incoming requests', err);
+			requestsCount = 0;
+		}
+	}
+  
+	return {
+		session,
+		requestsCount
+	};
 };

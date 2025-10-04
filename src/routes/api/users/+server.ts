@@ -1,81 +1,152 @@
-import books from '$lib/data/books.json';
-import requests from '$lib/data/requests.json'
-import users from '$lib/data/users.json';
+import UserModel from '$db/models/User.js';
 
-import fs from 'fs';
-
-import type { BookRequest } from '$lib/models/models.js';
-import { countRequestedBooksForuser } from '$lib/utils/utils.js';
-
-export function GET({ url }) {
-	const userId = url.searchParams.get('id');
-
-	if (userId && userId.length > 0) {
-		const user = users.find((u) => u.id === userId);
-		const userBooks = books.filter((b) => b.ownerId === userId);
-		return new Response(JSON.stringify({ user, books: userBooks }), {
-			status: 200,
-			headers: {
-				'Content-Type': 'application/json'
+export async function GET() {
+	// Aggregation: for each user compute:
+	// - bookCount: number of books with ownerId === user._id
+	// - incomingRequestsCount: number of Request documents that reference at least one requestedBooks.owner === user._id
+	const pipeline = [
+		// lookup book count
+		{
+			$lookup: {
+				from: 'books',
+				let: { uid: '$_id' },
+				pipeline: [{ $match: { $expr: { $eq: ['$ownerId', '$$uid'] } } }, { $count: 'count' }],
+				as: 'booksCount'
 			}
-		});
-	} else {
-		const userList = users.map((u) => {
-			const userBookIds = books.filter((b) => b.ownerId === u.id).map((b) => b.id);
-			const incomingRequests = countRequestedBooksForuser(userBookIds, requests as BookRequest[]);
-
-			return {
-				id: u.id,
-				username: u.username,
-				email: u.email,
-				location: u.location,
-				booksAmount: books.filter((b) => b.ownerId === u.id).length,
-				incomingRequests
-			};
-		});
-
-		return new Response(JSON.stringify({ users: userList }), {
-			status: 200,
-			headers: {
-				'Content-Type': 'application/json'
+		},
+		// lookup incoming requests count (requests that target user's books)
+		{
+			$lookup: {
+				from: 'requests',
+				let: { uid: '$_id' },
+				pipeline: [
+					// keep requests that contain at least one requestedBooks.owner equal to user id
+					{
+						$match: {
+							$expr: {
+								$gt: [
+									{
+										$size: {
+											$filter: {
+												input: '$requestedBooks',
+												as: 'rb',
+												cond: { $eq: ['$$rb.owner', '$$uid'] }
+											}
+										}
+									},
+									0
+								]
+							}
+						}
+					},
+					{ $count: 'count' }
+				],
+				as: 'incomingCount'
 			}
+		},
+		// expose counts as numbers (defaults to 0)
+		{
+			$addFields: {
+				bookCount: { $ifNull: [{ $arrayElemAt: ['$booksCount.count', 0] }, 0] },
+				incomingRequestsCount: { $ifNull: [{ $arrayElemAt: ['$incomingCount.count', 0] }, 0] }
+			}
+		},
+		// project the fields you want to return
+		{
+			$project: {
+				_id: 1,
+				username: 1,
+				fullname: 1,
+				email: 1,
+				location: 1,
+				createdAt: 1,
+				updatedAt: 1,
+				bookCount: 1,
+				incomingRequestsCount: 1
+			}
+		}
+	];
+
+	try {
+		const users = await UserModel.aggregate(pipeline).exec();
+
+		return new Response(JSON.stringify({ users }), {
+			status: 200,
+			headers: { 'Content-Type': 'application/json' }
+		});
+	} catch (err) {
+		console.error('GET /api/users aggregation error', err);
+		return new Response(JSON.stringify({ error: 'Internal server error' }), {
+			status: 500,
+			headers: { 'Content-Type': 'application/json' }
 		});
 	}
 }
 
 export async function POST({ request }) {
 	const newUser = await request.json();
-	newUser.id = `user-${Date.now()}`;
-	users.push(newUser);
-	fs.writeFileSync('src/lib/data/users.json', JSON.stringify(users, null, 2));
-	return new Response(JSON.stringify({ user: newUser }), { status: 201 });
+
+	if (!newUser || !newUser.email) {
+		return new Response(JSON.stringify({ error: 'Invalid user data' }), { status: 400 });
+	}
+
+	const createdUser = await UserModel.create(newUser);
+
+	if (!createdUser) {
+		return new Response(JSON.stringify({ error: 'Failed to create user' }), { status: 500 });
+	}
+
+	return new Response(JSON.stringify({ user: createdUser }), { status: 201 });
 }
 
-export async function PUT({ request }) {
-	const updatedUser = await request.json();
+export async function PUT({ request, locals }) {
+	const session = await locals.auth();
 
-	const { username, fullname, email, location } = updatedUser;
-
-	if (!username || !fullname || !email || !location) {
-		return new Response(JSON.stringify({ error: 'All fields are required' }), { status: 400 });
+	if (!session || !session.user) {
+		return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401 });
 	}
 
-	const index = users.findIndex((u) => u.id === updatedUser.id);
-	if (index !== -1) {
-		users[index] = updatedUser;
-		fs.writeFileSync('src/lib/data/users.json', JSON.stringify(users, null, 2));
-		return new Response(JSON.stringify({ user: updatedUser }), { status: 200 });
+	try {
+		const updatedUser = await request.json();
+		const userId = session.user.id;
+		if (userId !== updatedUser._id) {
+			return new Response(JSON.stringify({ error: 'Forbidden' }), { status: 403 });
+		}
+
+		const { username, fullname, email, location } = updatedUser;
+
+		if (!username || !fullname || !email || !location) {
+			return new Response(JSON.stringify({ error: 'All fields are required' }), { status: 400 });
+		}
+
+		const user = await UserModel.findByIdAndUpdate(
+			updatedUser._id,
+			{
+				username,
+				fullname,
+				email,
+				location
+			},
+			{ new: true }
+		)
+			.lean()
+			.exec();
+
+		if (!user) {
+			return new Response(JSON.stringify({ error: 'User not found' }), { status: 404 });
+		}
+
+		return new Response(JSON.stringify({ user }), { status: 200 });
+	} catch (error) {
+		console.error('Error processing PUT /api/users:', error);
+		return new Response(JSON.stringify({ error: 'Failed to update user' }), { status: 500 });
 	}
-	return new Response(JSON.stringify({ error: 'User not found' }), { status: 404 });
 }
 
 export async function DELETE({ request }) {
 	const { id } = await request.json();
-	const index = users.findIndex((u) => u.id === id);
-	if (index !== -1) {
-		users.splice(index, 1);
-		fs.writeFileSync('src/lib/data/users.json', JSON.stringify(users, null, 2));
-		return new Response(JSON.stringify({ success: true }), { status: 200 });
-	}
-	return new Response(JSON.stringify({ error: 'User not found' }), { status: 404 });
+
+	return new Response(JSON.stringify({ error: 'User with id ' + id + ' not found' }), {
+		status: 404
+	});
 }

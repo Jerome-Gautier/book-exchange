@@ -3,18 +3,17 @@
 
     const user = { ...data.user };
 
-    let { username, fullname, email, location } = $state(user);
-
+    let { _id, username, fullname, email, location } = $state(user);
     const handleSubmit = async() => {
         const updatedUser = {
-            id: user.id,
+            _id,
             username,
             fullname,
             email,
             location
         }
 
-        const response = await fetch(`/api/users`, {
+        const response = await fetch(`/api/users?userId=${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

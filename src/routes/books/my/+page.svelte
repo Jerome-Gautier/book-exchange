@@ -1,27 +1,30 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import type { Book } from '$lib/models/models.js';
 
     let { data } = $props();
 
     const user = data.user;
-    
-    const selection: any[] = [];
 
-    const toggleBook = (book: any) => {
-        if (selection.length > 0 && selection.includes(book.id)) {
-            const index = selection.findIndex(b => b === book.id);
+    let books = $state(data.books || []);
+    let selection = $state(data.selection || []);
+
+    let form = $state({ title: '', author: '', condition: '' });
+
+    const toggleBook = (book: Book) => {
+        if (selection.length > 0 && selection.includes(book._id)) {
+            const index = selection.findIndex((b: string) => b === book._id);
             selection.splice(index, 1);
         } else {
-            selection.push(book.id);
+            selection.push(book._id);
         }
     }
 
     const handleAddBook = async (event: Event) => {
         event.preventDefault();
-        const form = event.target as HTMLFormElement;
-        const title = (form.querySelector('#book-title') as HTMLInputElement).value;
-        const author = (form.querySelector('#author') as HTMLInputElement).value;
-        const condition = (form.querySelector('#condition') as HTMLInputElement).value;
+        const title = form.title;
+        const author = form.author;
+        const condition = form.condition;
         const userId = user?.id;
 
         const response = await fetch(`/api/books`, {
@@ -31,6 +34,17 @@
             },
             body: JSON.stringify({ title, author, condition, userId })
         });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            books.push(data.newBook);
+            form.title = '';
+            form.author = '';
+            form.condition = '';
+        } else {
+            window.alert('Failed to add book: ' + data.error);
+        }
     }
 
     const handleDeleteBook = async (bookId: string) => {
@@ -39,12 +53,11 @@
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ bookId, userId: user?.id })
+            body: JSON.stringify({ bookId, userId: user?._id })
         });
 
         if (response.ok) {
-            console.log(`Book with ID ${bookId} deleted successfully.`);
-            // Optionally, refresh the book list or handle UI updates
+            books.splice(books.findIndex((b: any) => b._id === bookId), 1);
         } else {
             console.error(`Failed to delete book with ID ${bookId}.`);
         }
@@ -78,15 +91,15 @@
     <form class="flex flex-col mb-4 w-full" onsubmit={handleAddBook}>
         <div class="flex flex-row mb-2 items-center justify-center w-full">
             <label for="book-title" class="mr-4 mb-2 w-[150px] text-right">Title:</label>
-            <input id="book-title" type="text" class="w-full border p-2 rounded mb-2" />
+            <input id="book-title" type="text" class="w-full border p-2 rounded mb-2" bind:value={form.title} />
         </div>
         <div class="flex flex-row mb-2 items-center justify-center w-full">
             <label for="author" class="mr-4 mb-2 w-[150px] text-right">Author:</label>
-            <input id="author" type="text" class="w-full border p-2 rounded mb-2" />
+            <input id="author" type="text" class="w-full border p-2 rounded mb-2" bind:value={form.author} />
         </div>
         <div class="flex flex-row mb-2 items-center justify-center w-full">
             <label for="condition" class="mr-4 mb-2 w-[150px] text-right">Condition:</label>
-            <input id="condition" type="text" class="w-full border p-2 rounded mb-2" />
+            <input id="condition" type="text" class="w-full border p-2 rounded mb-2" bind:value={form.condition} />
         </div>
         <button type="submit" class="w-[200px] ml-[136px] bg-blue-500 text-white px-4 py-2 rounded cursor-pointer hover:bg-blue-900 transition-all transition-delay-400">Add Book to Exchange</button>
     </form>
@@ -98,11 +111,11 @@
         <h1 class="text-4xl mx-2">{user.username}'s Books <span class="text-xl">available for trade</span></h1>
     </div>
     <div>
-        {#each user.books as book}
+        {#each books as book}
             <div class="flex flex-row items-center justify-between p-4 border-b border-gray-300">
                 <div class="flex flex-row items-center justify-start">
                     <div class="w-[50px] flex items-center justify-center">
-                        <input onclick={() => toggleBook(book)} type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 cursor-pointer" />
+                        <input onclick={() => toggleBook(book)} type="checkbox" checked={selection.includes(book._id)} class="form-checkbox h-5 w-5 text-blue-600 cursor-pointer" />
                     </div>
                     <div class="p-4">
                         <h2 class="text-xl font-semibold">{book.title}</h2>
@@ -124,7 +137,7 @@
                     {/if}
                     <button
                         class="mt-2 bg-red-500 hover:bg-red-700 text-white px-3 py-1 rounded transition cursor-pointer"
-                        onclick={() => handleDeleteBook(book.id)}
+                        onclick={() => handleDeleteBook(book._id)}
                     >
                         Delete
                     </button>

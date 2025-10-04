@@ -3,6 +3,19 @@ import { redirect, type Handle } from '@sveltejs/kit';
 import { handle as authenticationHandle } from './auth';
 import { sequence } from '@sveltejs/kit/hooks';
 
+import { connectDB } from '$db/connect';
+// Register models early so populate() and populate virtuals work during SSR
+import '$db/models/Book';
+import '$db/models/User';
+import '$db/models/Request';
+import '$db/models/Trade';
+
+connectDB().then(() => {
+    console.log('MongoDB connected');
+}).catch((error) => {
+    console.error('Error connecting to MongoDB:', error);
+});
+
 const restrictedRoutes = ['/books/my','/users/edit', '/requests/incoming'];
 
 const handleDevtools: Handle = async ({ event, resolve }) => {

@@ -9,13 +9,13 @@
     </div>
     <div>
         {#each trades as trade}
-            {#if 'fromId' in trade && 'toId' in trade}
+            {#if 'fromUser' in trade && 'toUser' in trade}
                 <div class="bg-gray-100 border border-gray-300 rounded p-4 mb-4">
                     <div class="flex flex-row">
                         <!-- Gives -->
                         <div class="w-1/2 pr-4 border-r border-gray-300">
                             <div class="mb-2">
-                                <a href={`/users/${trade.fromId}`} class="text-blue-600 hover:underline font-medium">{trade.fromUsername}</a>
+                                <a href={`/users/${trade.fromUser._id}`} class="text-blue-600 hover:underline font-medium">{trade.fromUser.username}</a>
                                 <span class="text-gray-600"> gets:</span>
                             </div>
                             <div class="bg-white border border-gray-200 rounded p-3">
@@ -30,7 +30,7 @@
                         <!-- Takes -->
                         <div class="w-1/2 pl-4">
                             <div class="mb-2">
-                                <a href={`/users/${trade.toId}`} class="text-blue-600 hover:underline font-medium">{trade.toUsername}</a>
+                                <a href={`/users/${trade.toUser._id}`} class="text-blue-600 hover:underline font-medium">{trade.toUser.username}</a>
                                 <span class="text-gray-600"> gets:</span>
                             </div>
                             <div>

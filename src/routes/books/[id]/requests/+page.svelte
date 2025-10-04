@@ -1,7 +1,7 @@
 <script lang="ts">
     let { data } = $props();
-    const book: any = data.book;
-    const { requests } = data;
+
+    const { book, requests } = data;
     console.log(requests);
 </script>
 
@@ -20,14 +20,14 @@
                     <!-- Gives -->
                     <div class="sm:w-1/2 sm:pr-4 sm:border-r border-gray-300">
                         <div class="mb-2">
-                            <a href={`/users/${request.fromUser.id}`} class="text-blue-600 hover:underline font-medium">{request.fromUser.username}</a>
+                            <a href={`/users/${request.fromUser._id}`} class="text-blue-600 hover:underline font-medium">{request.fromUser.username}</a>
                             <span class="text-gray-600"> wants to give:</span>
                         </div>
                         {#if request.offeredBooks}
                         {#each request.offeredBooks as book}
                         <div class="bg-white border border-gray-200 rounded p-3">
                             <div class="font-semibold">{book.title}</div>
-                            <div class="text-gray-600">{book.author}</div>
+                            <div class="text-gray-600">by {book.author}</div>
                         </div>
                         {/each}
                         {/if}
@@ -38,11 +38,11 @@
                             <span class="text-gray-600">and wants to take:</span>
                         </div>
                         {#if request.requestedBooks}
-                            {#each request.requestedBooks as book}
+                            {#each request.requestedBooks as obj}
                             <div>
                                 <div class="bg-white border border-gray-200 rounded p-3">
-                                    <div class="font-semibold">{book.title} <span class="font-light">from</span><a href={`/users/${book.ownerId}`} class="text-blue-500 ml-1">{book.ownerUsername}</a></div>
-                                    <div class="text-gray-600">{book.author}</div>
+                                    <div class="font-semibold">{obj.book.title} <span class="font-light">from</span><a href={`/users/${obj.owner._id}`} class="text-blue-500 ml-1">{obj.owner.username}</a></div>
+                                    <div class="text-gray-600">by {obj.book.author}</div>
                                 </div>
                             </div>
                             {/each}

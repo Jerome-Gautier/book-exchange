@@ -1,15 +1,13 @@
-import books from '$lib/data/books.json';
-
 export async function load({ params, fetch }) {
     const bookId = params.id;
 
-    const bookDetails = books.find((b) => b.id === bookId);
+    const response = await fetch(`/api/books/${bookId}/requests`);
 
-    const response = await fetch(`/api/requests?id=${bookId}`);
-    const { requests } = await response.json();
-    
+    const data = await response.json();
+    console.log(data.book);
+
     return {
-        book: bookDetails,
-        requests
+        book: data.book,
+        requests: data.requests
     }
 }

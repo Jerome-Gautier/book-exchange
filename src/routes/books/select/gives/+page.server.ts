@@ -4,21 +4,22 @@ export async function load({ cookies, fetch, locals }) {
 
 	const userId = session?.user?.id;
 
-	const response = await fetch(`/api/users/${userId}/get-books`);
+	const response = await fetch(`/api/users/${userId}/books`);
 
 	const data = await response.json();
 
-	const user = data.user || null;
+	const { user, books } = data || null;
 
-	if (!user) {
+	if (!user || !books) {
 		return {
 			status: 404,
-			error: new Error('User not found')
+			error: 'Data not found'
 		};
 	}
 
 	return {
 		selection: offeredBooks,
-		user
+		user,
+		books
 	}
 }

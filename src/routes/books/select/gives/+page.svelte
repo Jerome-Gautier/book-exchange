@@ -3,20 +3,16 @@
 
     let { data } = $props();
 
-    const user = data.user;
-    let selection: any = data.selection || [];
+    const { user, books } = data;
+    let selection = $state(data.selection);
 
     const toggleBook = (book: any) => {
-        if (selection.length > 0 && selection.find((b: any) => b === book.id)) {
-            const index = selection.findIndex((b: any) => b === book.id);
+        if (selection.length > 0 && selection.find((b: any) => b === book._id)) {
+            const index = selection.findIndex((b: any) => b === book._id);
             selection.splice(index, 1);
         } else {
-            selection.push(book.id);
+            selection.push(book._id);
         }
-    }
-
-    const handleUnselectBook = (bookId: string) => {
-        console.log(bookId);
     }
 
     const handleNewRequest = async () => {
@@ -48,24 +44,24 @@
         <h1 class="text-4xl mx-2">{user.username}'s Books <span class="text-xl">available for trade</span></h1>
     </div>
     <div>
-        {#each user.books as book}
+        {#each books as book}
             <div class="flex flex-row items-center justify-between p-4 border-b border-gray-300">
                 <div class="flex flex-row items-center justify-start">
                     <div class="w-[50px] flex items-center justify-center">
-                        <input onclick={() => toggleBook(book)} type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 cursor-pointer" checked={selection.includes(book.id)} />
+                        <input onclick={() => toggleBook(book)} type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 cursor-pointer" checked={selection.includes(book._id)} />
                     </div>
                     <div class="p-4">
                         <h2 class="text-xl font-semibold">{book.title}</h2>
                         <p class="text-gray-700">Author: {book.author}</p>
-                        <p class="text-gray-500">from <a class="text-blue-500 hover:text-blue-800" href={`/users/${user.id}`}>{user.username}</a> in {user.location}</p>
+                        <p class="text-gray-500">from <a class="text-blue-500 hover:text-blue-800" href={`/users/${user._id}`}>{user.username}</a> in {user.location}</p>
                     </div>
                 </div>
                 <div class="text-right flex flex-col items-end gap-2">
                     {#if book.requests && book.requests.length >= 1}
-                    <a href={`/books/${book.id}/requests`}><span class="text-blue-500 hover:text-blue-800 font-semibold">Requests</span> <span class="bg-black text-white px-2 rounded-full">{book.requests.length}</span></a>
+                    <a href={`/books/${book._id}/requests`}><span class="text-blue-500 hover:text-blue-800 font-semibold">Requests</span> <span class="bg-black text-white px-2 rounded-full">{book.requests.length}</span></a>
                     <p>
                         ({#each book.requests as trade, index}
-                            <a class="text-blue-500 hover:text-blue-800" href={`/users/${trade.fromUser.id}`}>{trade.fromUser.username}</a>
+                            <a class="text-blue-500 hover:text-blue-800" href={`/users/${trade.fromUser._id}`}>{trade.fromUser.username}</a>
                             {#if index < book.requests.length - 1}
                             <span class="mr-2">,</span>{/if}
                         {/each})

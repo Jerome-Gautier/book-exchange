@@ -7,7 +7,7 @@ export async function load({ fetch, locals }) {
         }
     }
 
-    const response = await fetch(`/api/users?id=${session.user.id}`);
+    const response = await fetch(`/api/users/${session.user.id}`);
     
     const data = await response.json();
 

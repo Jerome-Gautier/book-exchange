@@ -1,35 +1,43 @@
-import users from '$lib/data/users.json';
+import type { RequestEvent } from '@sveltejs/kit';
+import UserModel from '../../../../db/models/User';
+import type { UserDocument } from '$lib/models/models';
 
-import fs from 'fs';
-import path from 'path';
+export async function POST({ request }: RequestEvent) {
+    const payload = await request.json();
+    const newUser = payload?.user || payload;
 
-export async function POST({ request }) {
-    let newUser = await request.json();
-    newUser = newUser.user;
-
-    if (!newUser) {
+    if (!newUser || !newUser.email) {
         return new Response(JSON.stringify({ error: 'Invalid user data' }), { status: 400 });
     }
 
-    let user = users.find(u => u.email === newUser.email);
-    if (user && user.id) {
-        return new Response(JSON.stringify({ user }), { status: 409 });
-    } else if (newUser.email) {
-        user = {
-            id: (users.length + 1).toString(),
-            username: newUser.name,
-            fullname: newUser.fullname || 'Unknown',
-            email: newUser.email,
-            location: newUser.location || 'Unknown',
-        };
-
-        users.push(user);
-        fs.writeFileSync(
-            path.resolve('src/lib/data/users.json'),
-            JSON.stringify(users, null, 2),
-            'utf-8'
-        );
+    // Check for existing user by email
+    const existing = await UserModel.findOne({ email: newUser.email }).lean().exec() as UserDocument | null;
+    if (existing) {
+        return new Response(JSON.stringify({ user: {
+            id: String(existing._id),
+            username: existing.username,
+            fullname: existing.fullname,
+            email: existing.email,
+            location: existing.location
+        } }), { status: 409 });
     }
-    
-    return new Response(JSON.stringify({ success: true, user }), { status: 201 });
+
+    // create user
+    const created = await UserModel.create({
+        username: newUser.name || newUser.username,
+        fullname: newUser.fullname || 'Unknown',
+        email: newUser.email,
+        location: newUser.location || 'Unknown'
+    });
+
+    // return created user (normalize id to string)
+    const userOut = {
+        id: String(created._id),
+        username: created.username,
+        fullname: created.fullname,
+        email: created.email,
+        location: created.location
+    };
+
+    return new Response(JSON.stringify({ success: true, user: userOut }), { status: 201 });
 }

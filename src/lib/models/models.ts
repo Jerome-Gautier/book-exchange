@@ -1,10 +1,9 @@
 export type Book = {
-	id: string;
+	_id: string;
 	title: string;
 	author: string;
     condition: string;
     ownerId: string;
-    status: 'available' | 'wanted';
 };
 
 export type BookOwner = {
@@ -12,6 +11,14 @@ export type BookOwner = {
     location: string;
     username: string;
 }
+
+export type UserDocument = {
+    _id: unknown;
+    username: string;
+    fullname: string;
+    email: string;
+    location: string;
+};
 
 export type User = {
     id: string;

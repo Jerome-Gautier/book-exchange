@@ -11,12 +11,12 @@
 
     const handleSubmit = async () => {
         const reqObject = {
-            fromUserId: session?.user?.id,
-            offeredBooksIds: offeredBooks.map((b: Book) => b.id),
+            fromUser: session?.user?.id,
+            offeredBooks: offeredBooks.map((b: Book) => b._id),
             requestedBooks: requestedBooks.map((b: any) => {
                 return {
-                    id: b.id,
-                    ownerId: b.owner.id
+                    book: b._id,
+                    owner: b.ownerId
                 }
             })
         }
@@ -79,7 +79,7 @@
                                         <span class="ml-1 bg-gray-700 text-white text-xs px-2 rounded-full">{book.requestsCount}</span>
                                     </a>
                                     {/if}
-                                    <div class="font-semibold">{book.title}<span class="text-sm font-light ml-1">from <a href={`/users/${book.owner.id}`} class="text-blue-600 hover:underline">{book.owner.username}</a></span></div>
+                                    <div class="font-semibold">{book.title}<span class="text-sm font-light ml-1">from <a href={`/users/${book.ownerId}`} class="text-blue-600 hover:underline">{book.ownerDetails.username}</a></span></div>
                                     <div class="text-gray-600">{book.author}</div>
                                 </div>
                             </div>

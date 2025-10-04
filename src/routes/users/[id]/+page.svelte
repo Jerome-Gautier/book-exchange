@@ -11,7 +11,7 @@
         <p class="text-lg text-gray-500 mb-8"><span class="font-bold">Location:</span> {user.location}</p>
     </div>
     <div class="flex flex-col justify-center">
-        <a class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded shadow transition font-semibold text-center" href={`/users/${user.id}/books`}>{user.username}'s Books</a>
+        <a class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded shadow transition font-semibold text-center" href={`/users/${user._id}/books`}>{user.username}'s Books</a>
     </div>
 </div>
 {:else}

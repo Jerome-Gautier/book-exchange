@@ -1,24 +1,38 @@
 <script lang="ts">
+	import RequestBtn from '$lib/components/request-btn.svelte';
+import type { Book } from '$lib/models/models.js';
+
     let { data } = $props();
 
-    const user = data.user;
+    const { user, books } = data;
+    const selection = $state(data.selection || []);
 
-    const toggleBook = (book: any) => {
-        console.log(`Toggling book: ${book.title}`);
-        // Implement the logic to handle book selection
+    const toggleBook = (book: Book) => {
+        const index = selection.indexOf(book._id);
+        if (index === -1) {
+            selection.push(book._id);
+        } else {
+            selection.splice(index, 1);
+        }
     }
 </script>
 
 {#if user}
-<div class="max-w-4xl m-8 border-2 border-gray-300 mx-auto">
+<div class="relative max-w-4xl m-8 border-2 border-gray-300 mx-auto">
+    <RequestBtn {selection} />
     <div class="text-center w-full py-4 bg-gray-200">
         <h1 class="text-4xl">{user.username}'s Books <span class="text-xl">available for trade</span></h1>
     </div>
     <div>
-        {#each user.books as book}
+        {#if books.length === 0}
+            <div class="p-8 text-center">
+                <p class="text-gray-600">This user has not listed any books for trade yet.</p>
+            </div>
+        {/if}
+        {#each books as book}
         <div class="flex flex-row items-center justify-between p-4 border-b border-gray-300">
             <div class="flex flex-row items-center justify-start">
-                <input onclick={() => toggleBook(book)} type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" />
+                <input onclick={() => toggleBook(book)} type="checkbox" checked={selection.includes(book._id)} class="form-checkbox h-5 w-5 text-blue-600" />
                 <div class="p-4">
                     <h2 class="text-xl font-semibold">{book.title}</h2>
                     <p class="text-gray-700">Author: {book.author}</p>
