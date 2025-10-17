@@ -5,7 +5,6 @@
     const requests = $state(data.requests);
 
     const userId = data.userId;
-    console.log(requests[0])
 
     const handleDelete = async (requestId: number, index: number) => {
         const requestObject = {
@@ -44,7 +43,7 @@
                     <!-- Gives -->
                     <div class="w-1/2 pr-4 border-r border-gray-300">
                         <div class="mb-2">
-                            <a href={`/users/${request.fromUser.id}`} class="text-blue-600 hover:underline font-medium">{request.fromUser.username}</a>
+                            <a href={`/users/${request.fromUser._id}`} class="text-blue-600 hover:underline font-medium">{request.fromUser.username}</a>
                             <span class="text-gray-600"> wants to give:</span>
                         </div>
                         {#if request.offeredBooks}

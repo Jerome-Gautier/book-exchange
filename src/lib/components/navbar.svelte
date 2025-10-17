@@ -27,7 +27,7 @@
                         <div class="relative group inline-block">
                             <a href="/requests">
                                 <button
-                                    class="hover:text-blue-400 transition"
+                                    class="hover:text-blue-400 transition cursor-pointer"
                                     onmouseenter={() => showRequestsDropdown = true}
                                     onmouseleave={() => showRequestsDropdown = false}
                                 >

@@ -2,7 +2,6 @@
     let { data } = $props();
     
     const { users } = data || [];
-    console.log(users[0])
 </script>
 
 <div class="max-w-3xl mx-auto mt-10">

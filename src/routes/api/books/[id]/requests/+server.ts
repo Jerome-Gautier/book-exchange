@@ -50,13 +50,13 @@ export async function GET({ params }) {
     // attach requestCount to each book entry
     for (const req of requestsData) {
         if (Array.isArray(req.offeredBooks)) {
-            req.offeredBooks = req.offeredBooks.map((ob: any) => {
+            req.offeredBooks = req.offeredBooks.map((ob) => {
                 const id = ob && (ob._id ?? ob) ? String(ob._id ?? ob) : null;
                 return { ...ob, requestCount: id ? countsMap[id] ?? 0 : 0 };
             });
         }
         if (Array.isArray(req.requestedBooks)) {
-            req.requestedBooks = req.requestedBooks.map((rb: any) => {
+            req.requestedBooks = req.requestedBooks.map((rb) => {
                 const bookRef = rb && rb.book;
                 const id = bookRef && (bookRef._id ?? bookRef) ? String(bookRef._id ?? bookRef) : null;
                 return {
@@ -66,7 +66,6 @@ export async function GET({ params }) {
             });
         }
     }
-    console.log(requestsData[0]);
 
     return new Response(JSON.stringify({ book, requests: requestsData }), { status: 200 });
 }

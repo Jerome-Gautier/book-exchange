@@ -1,8 +1,9 @@
 <script lang="ts">
+	import RequestsDisplay from "$lib/components/requestsDisplay.svelte";
+
     let { data } = $props();
 
     const { book, requests } = data;
-    console.log(requests);
 </script>
 
 {#if book}
@@ -41,6 +42,7 @@
                             {#each request.requestedBooks as obj}
                             <div>
                                 <div class="bg-white border border-gray-200 rounded p-3">
+                                    <RequestsDisplay bookId={obj.book._id} requestCount={obj.book.requestCount} />
                                     <div class="font-semibold">{obj.book.title} <span class="font-light">from</span><a href={`/users/${obj.owner._id}`} class="text-blue-500 ml-1">{obj.owner.username}</a></div>
                                     <div class="text-gray-600">by {obj.book.author}</div>
                                 </div>

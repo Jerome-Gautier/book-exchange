@@ -1,212 +1,962 @@
 [
   {
-    "id": "t1725792000000",
-    "fromId": "1",
-    "toId": "2",
-    "bookGiven": {
-      "title": "Brave New World",
-      "author": "Aldous Huxley"
-    },
-    "bookTaken": {
-      "title": "Dune",
-      "author": "Frank Herbert"
-    },
-    "timestamp": "2025-07-01T10:00:00Z"
-  },
-  {
-    "id": "t1725795600000",
-    "fromId": "2",
-    "toId": "3",
-    "bookGiven": {
-      "title": "To Kill a Mockingbird",
-      "author": "Harper Lee"
-    },
-    "bookTaken": {
-      "title": "Pride and Prejudice",
-      "author": "Jane Austen"
-    },
-    "timestamp": "2025-07-01T11:00:00Z"
-  },
-  {
-    "id": "t1725799200000",
-    "fromId": "3",
-    "toId": "4",
-    "bookGiven": {
-      "title": "Jurassic Park",
-      "author": "Michael Crichton"
-    },
-    "bookTaken": {
-      "title": "Fahrenheit 451",
-      "author": "Ray Bradbury"
-    },
-    "timestamp": "2025-07-01T12:00:00Z"
-  },
-  {
-    "id": "t1725802800000",
-    "fromId": "4",
-    "toId": "5",
+    "_id": "68f0f7ea386ca6bc9bf83283",
+    "fromUser": "68f0e2326c8c117327d34f2d",
+    "toUser": "68f0e2326c8c117327d34f35",
     "bookGiven": {
       "title": "The Great Gatsby",
-      "author": "F. Scott Fitzgerald"
+      "author": "F. Scott Fitzgerald",
+      "ownerId": "68f0e2326c8c117327d34f31"
     },
     "bookTaken": {
-      "title": "Jurassic Park",
-      "author": "Michael Crichton"
+      "title": "World World",
+      "author": "Jane Austen",
+      "ownerId": "68f0e2326c8c117327d34f35"
     },
-    "timestamp": "2025-07-01T13:00:00Z"
+    "createdAt": "2025-10-16T13:49:30.289Z"
   },
   {
-    "id": "t1725806400000",
-    "fromId": "5",
-    "toId": "6",
+    "_id": "68f0f7ea386ca6bc9bf83284",
+    "fromUser": "68f0e2326c8c117327d34f3c",
+    "toUser": "68f0e2326c8c117327d34f2d",
     "bookGiven": {
-      "title": "Sapiens",
-      "author": "Yuval Noah Harari"
+      "title": "Gatsby Dune",
+      "author": "Alice Walker",
+      "ownerId": "68f0e2326c8c117327d34f3c"
     },
     "bookTaken": {
-      "title": "The Hobbit",
-      "author": "J.R.R. Tolkien"
+      "title": "1984 Rye",
+      "author": "Harper Lee",
+      "ownerId": "68f0e2326c8c117327d34f2d"
     },
-    "timestamp": "2025-07-01T14:00:00Z"
+    "createdAt": "2025-10-16T13:49:30.289Z"
   },
   {
-    "id": "t1725810000000",
-    "fromId": "6",
-    "toId": "7",
+    "_id": "68f0f7ea386ca6bc9bf83285",
+    "fromUser": "68f0e2326c8c117327d34f2d",
+    "toUser": "68f0e2326c8c117327d34f3b",
     "bookGiven": {
+      "title": "Dune Brave",
+      "author": "J.R.R. Tolkien",
+      "ownerId": "68f0e2326c8c117327d34f2d"
+    },
+    "bookTaken": {
+      "title": "World Park",
+      "author": "Jane Austen",
+      "ownerId": "68f0e2326c8c117327d34f3b"
+    },
+    "createdAt": "2025-10-16T13:49:30.289Z"
+  },
+  {
+    "_id": "68f0f7ea386ca6bc9bf83286",
+    "fromUser": "68f0e2326c8c117327d34f40",
+    "toUser": "68f0e2326c8c117327d34f2d",
+    "bookGiven": {
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "ownerId": "68f0e2326c8c117327d34f36"
+    },
+    "bookTaken": {
       "title": "The Lost World",
-      "author": "Michael Crichton"
+      "author": "Michael Crichton",
+      "ownerId": "68f0e2326c8c117327d34f3a"
+    },
+    "createdAt": "2025-10-16T13:49:30.289Z"
+  },
+  {
+    "_id": "68f0f7ea386ca6bc9bf83287",
+    "fromUser": "68f0e2326c8c117327d34f2d",
+    "toUser": "68f0e26a19d991c2c07cc134",
+    "bookGiven": {
+      "title": "Rye Catcher",
+      "author": "Alice Walker",
+      "ownerId": "68f0e2326c8c117327d34f2d"
+    },
+    "bookTaken": {
+      "title": "Dune Lost",
+      "author": "George Orwell",
+      "ownerId": "68f0e26a19d991c2c07cc134"
+    },
+    "createdAt": "2025-10-16T13:49:30.289Z"
+  },
+  {
+    "_id": "68f0f7ea386ca6bc9bf83288",
+    "fromUser": "68f0e2326c8c117327d34f3e",
+    "toUser": "68f0e2326c8c117327d34f33",
+    "bookGiven": {
+      "title": "New Fahrenheit",
+      "author": "Michael Crichton",
+      "ownerId": "68f0e2326c8c117327d34f3e"
+    },
+    "bookTaken": {
+      "title": "1984 Sapiens",
+      "author": "Aldous Huxley",
+      "ownerId": "68f0e2326c8c117327d34f33"
+    },
+    "createdAt": "2025-10-16T13:49:30.289Z"
+  },
+  {
+    "_id": "68f0f7ea386ca6bc9bf83289",
+    "fromUser": "68f0e2326c8c117327d34f30",
+    "toUser": "68f0e2326c8c117327d34f40",
+    "bookGiven": {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "ownerId": "68f0e2326c8c117327d34f3a"
     },
     "bookTaken": {
       "title": "The Catcher in the Rye",
-      "author": "J.D. Salinger"
+      "author": "J.D. Salinger",
+      "ownerId": "68f0e2326c8c117327d34f39"
     },
-    "timestamp": "2025-07-01T15:00:00Z"
+    "createdAt": "2025-10-16T13:49:30.289Z"
   },
   {
-    "id": "t1725813600000",
-    "fromId": "7",
-    "toId": "8",
+    "_id": "68f0f7ea386ca6bc9bf8328a",
+    "fromUser": "68f0e2326c8c117327d34f3f",
+    "toUser": "68f0e2326c8c117327d34f38",
     "bookGiven": {
-      "title": "Jurassic Park",
-      "author": "Michael Crichton"
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "ownerId": "68f0e2326c8c117327d34f3c"
     },
     "bookTaken": {
       "title": "Moby-Dick",
-      "author": "Herman Melville"
+      "author": "Herman Melville",
+      "ownerId": "68f0e2326c8c117327d34f3d"
     },
-    "timestamp": "2025-07-01T16:00:00Z"
+    "createdAt": "2025-10-16T13:49:30.289Z"
   },
   {
-    "id": "t1725817200000",
-    "fromId": "8",
-    "toId": "9",
+    "_id": "68f0f7ea386ca6bc9bf8328b",
+    "fromUser": "68f0e2326c8c117327d34f32",
+    "toUser": "68f0e2326c8c117327d34f3f",
     "bookGiven": {
-      "title": "The Great Gatsby",
-      "author": "F. Scott Fitzgerald"
+      "title": "Fahrenheit 1984",
+      "author": "Aldous Huxley",
+      "ownerId": "68f0e2326c8c117327d34f32"
     },
     "bookTaken": {
-      "title": "1984",
-      "author": "George Orwell"
+      "title": "Moby-Dick Prejudice",
+      "author": "Aldous Huxley",
+      "ownerId": "68f0e2326c8c117327d34f3f"
     },
-    "timestamp": "2025-07-01T17:00:00Z"
+    "createdAt": "2025-10-16T13:49:30.289Z"
   },
   {
-    "id": "t1725820800000",
-    "fromId": "9",
-    "toId": "10",
+    "_id": "68f0f7ea386ca6bc9bf8328c",
+    "fromUser": "68f0e2326c8c117327d34f31",
+    "toUser": "68f0e2326c8c117327d34f37",
     "bookGiven": {
-      "title": "The Hobbit",
-      "author": "J.R.R. Tolkien"
+      "title": "Dune World",
+      "author": "Jane Austen",
+      "ownerId": "68f0e2326c8c117327d34f31"
     },
     "bookTaken": {
-      "title": "Brave New World",
-      "author": "Aldous Huxley"
+      "title": "Dune 1984",
+      "author": "Frank Herbert",
+      "ownerId": "68f0e2326c8c117327d34f37"
     },
-    "timestamp": "2025-07-01T18:00:00Z"
+    "createdAt": "2025-10-16T13:49:30.289Z"
   },
   {
-    "id": "t1725824400000",
-    "fromId": "10",
-    "toId": "11",
+    "_id": "68f0f7ea386ca6bc9bf8328d",
+    "fromUser": "68f0e2326c8c117327d34f3c",
+    "toUser": "68f0e2326c8c117327d34f33",
     "bookGiven": {
-      "title": "Brave New World",
-      "author": "Aldous Huxley"
-    },
-    "bookTaken": {
       "title": "The Lost World",
-      "author": "Michael Crichton"
+      "author": "Michael Crichton",
+      "ownerId": "68f0e2326c8c117327d34f40"
     },
-    "timestamp": "2025-07-01T19:00:00Z"
+    "bookTaken": {
+      "title": "Jurassic World",
+      "author": "George Orwell",
+      "ownerId": "68f0e2326c8c117327d34f33"
+    },
+    "createdAt": "2025-10-16T13:49:30.289Z"
   },
   {
-    "id": "t1725828000000",
-    "fromId": "11",
-    "toId": "12",
+    "_id": "68f0f7ea386ca6bc9bf8328e",
+    "fromUser": "68f0e2326c8c117327d34f3b",
+    "toUser": "68f0e2326c8c117327d34f3d",
+    "bookGiven": {
+      "title": "Park Jurassic",
+      "author": "George Orwell",
+      "ownerId": "68f0e2326c8c117327d34f3b"
+    },
+    "bookTaken": {
+      "title": "Great Great",
+      "author": "J.R.R. Tolkien",
+      "ownerId": "68f0e2326c8c117327d34f3d"
+    },
+    "createdAt": "2025-10-16T13:49:30.289Z"
+  },
+  {
+    "_id": "68f0f7ea386ca6bc9bf8328f",
+    "fromUser": "68f0e26a19d991c2c07cc134",
+    "toUser": "68f0e2326c8c117327d34f3b",
+    "bookGiven": {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "ownerId": "68f0e2326c8c117327d34f3f"
+    },
+    "bookTaken": {
+      "title": "New World",
+      "author": "Frank Herbert",
+      "ownerId": "68f0e2326c8c117327d34f3b"
+    },
+    "createdAt": "2025-10-16T13:49:30.289Z"
+  },
+  {
+    "_id": "68f0f7ea386ca6bc9bf83290",
+    "fromUser": "68f0e2326c8c117327d34f40",
+    "toUser": "68f0e2326c8c117327d34f3e",
+    "bookGiven": {
+      "title": "Dune 1984",
+      "author": "Aldous Huxley",
+      "ownerId": "68f0e2326c8c117327d34f40"
+    },
+    "bookTaken": {
+      "title": "1984",
+      "author": "George Orwell",
+      "ownerId": "68f0e2326c8c117327d34f32"
+    },
+    "createdAt": "2025-10-16T13:49:30.289Z"
+  },
+  {
+    "_id": "68f0f7ea386ca6bc9bf83291",
+    "fromUser": "68f0e2326c8c117327d34f33",
+    "toUser": "68f0e2326c8c117327d34f3f",
     "bookGiven": {
       "title": "1984",
-      "author": "George Orwell"
+      "author": "George Orwell",
+      "ownerId": "68f0e2326c8c117327d34f32"
     },
     "bookTaken": {
-      "title": "Jurassic Park",
-      "author": "Michael Crichton"
+      "title": "1984",
+      "author": "George Orwell",
+      "ownerId": "68f0e2326c8c117327d34f3c"
     },
-    "timestamp": "2025-07-01T20:00:00Z"
+    "createdAt": "2025-10-16T13:49:30.289Z"
   },
   {
-    "id": "t1725831600000",
-    "fromId": "12",
-    "toId": "13",
+    "_id": "68f0f7ea386ca6bc9bf83292",
+    "fromUser": "68f0e2326c8c117327d34f2d",
+    "toUser": "68f0e2326c8c117327d34f32",
     "bookGiven": {
+      "title": "Moby-Dick Moby-Dick",
+      "author": "Alice Walker",
+      "ownerId": "68f0e2326c8c117327d34f2d"
+    },
+    "bookTaken": {
+      "title": "World Gatsby",
+      "author": "Alice Walker",
+      "ownerId": "68f0e2326c8c117327d34f32"
+    },
+    "createdAt": "2025-10-16T13:49:30.289Z"
+  },
+  {
+    "_id": "68f0f7ea386ca6bc9bf83293",
+    "fromUser": "68f0e2326c8c117327d34f37",
+    "toUser": "68f0e2326c8c117327d34f35",
+    "bookGiven": {
+      "title": "The Lost World",
+      "author": "Michael Crichton",
+      "ownerId": "68f0e2326c8c117327d34f2d"
+    },
+    "bookTaken": {
+      "title": "Prejudice New",
+      "author": "J.R.R. Tolkien",
+      "ownerId": "68f0e2326c8c117327d34f35"
+    },
+    "createdAt": "2025-10-16T13:49:30.289Z"
+  },
+  {
+    "_id": "68f0f7ea386ca6bc9bf83294",
+    "fromUser": "68f0e2326c8c117327d34f37",
+    "toUser": "68f0e2326c8c117327d34f39",
+    "bookGiven": {
+      "title": "Prejudice Jurassic",
+      "author": "Michael Crichton",
+      "ownerId": "68f0e2326c8c117327d34f37"
+    },
+    "bookTaken": {
+      "title": "Park 451",
+      "author": "J.R.R. Tolkien",
+      "ownerId": "68f0e2326c8c117327d34f39"
+    },
+    "createdAt": "2025-10-16T13:49:30.289Z"
+  },
+  {
+    "_id": "68f0f7ea386ca6bc9bf83295",
+    "fromUser": "68f0e2326c8c117327d34f39",
+    "toUser": "68f0e2326c8c117327d34f33",
+    "bookGiven": {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "ownerId": "68f0e2326c8c117327d34f3f"
+    },
+    "bookTaken": {
       "title": "The Great Gatsby",
-      "author": "F. Scott Fitzgerald"
+      "author": "F. Scott Fitzgerald",
+      "ownerId": "68f0e2326c8c117327d34f37"
     },
-    "bookTaken": {
-      "title": "Dune",
-      "author": "Frank Herbert"
-    },
-    "timestamp": "2025-07-01T21:00:00Z"
+    "createdAt": "2025-10-16T13:49:30.289Z"
   },
   {
-    "id": "t1725835200000",
-    "fromId": "13",
-    "toId": "14",
+    "_id": "68f0f7ea386ca6bc9bf83296",
+    "fromUser": "68f0e26a19d991c2c07cc134",
+    "toUser": "68f0e2326c8c117327d34f34",
     "bookGiven": {
-      "title": "Jurassic Park",
-      "author": "Michael Crichton"
+      "title": "Dune Rye",
+      "author": "Michael Crichton",
+      "ownerId": "68f0e26a19d991c2c07cc134"
     },
     "bookTaken": {
-      "title": "The Hobbit",
-      "author": "J.R.R. Tolkien"
+      "title": "Pride Hobbit",
+      "author": "Aldous Huxley",
+      "ownerId": "68f0e2326c8c117327d34f34"
     },
-    "timestamp": "2025-07-01T22:00:00Z"
+    "createdAt": "2025-10-16T13:49:30.289Z"
   },
   {
-    "id": "t1725838800000",
-    "fromId": "14",
-    "toId": "15",
+    "_id": "68f0f7ea386ca6bc9bf83297",
+    "fromUser": "68f0e2326c8c117327d34f34",
+    "toUser": "68f0e2326c8c117327d34f31",
+    "bookGiven": {
+      "title": "451 New",
+      "author": "Jane Austen",
+      "ownerId": "68f0e2326c8c117327d34f34"
+    },
+    "bookTaken": {
+      "title": "Fahrenheit 451",
+      "author": "Ray Bradbury",
+      "ownerId": "68f0e2326c8c117327d34f38"
+    },
+    "createdAt": "2025-10-16T13:49:30.289Z"
+  },
+  {
+    "_id": "68f0f7ea386ca6bc9bf83298",
+    "fromUser": "68f0e2326c8c117327d34f32",
+    "toUser": "68f0e2326c8c117327d34f2f",
+    "bookGiven": {
+      "title": "New Sapiens",
+      "author": "Jane Austen",
+      "ownerId": "68f0e2326c8c117327d34f32"
+    },
+    "bookTaken": {
+      "title": "Catcher Pride",
+      "author": "Michael Crichton",
+      "ownerId": "68f0e2326c8c117327d34f2f"
+    },
+    "createdAt": "2025-10-16T13:49:30.289Z"
+  },
+  {
+    "_id": "68f0f7ea386ca6bc9bf83299",
+    "fromUser": "68f0e2326c8c117327d34f38",
+    "toUser": "68f0e2326c8c117327d34f32",
     "bookGiven": {
       "title": "To Kill a Mockingbird",
-      "author": "Harper Lee"
+      "author": "Harper Lee",
+      "ownerId": "68f0e2326c8c117327d34f40"
     },
     "bookTaken": {
-      "title": "Moby-Dick",
-      "author": "Herman Melville"
+      "title": "Dune 1984",
+      "author": "Michael Crichton",
+      "ownerId": "68f0e2326c8c117327d34f32"
     },
-    "timestamp": "2025-07-01T23:00:00Z"
+    "createdAt": "2025-10-16T13:49:30.289Z"
   },
   {
-    "id": "t1725842400000",
-    "fromId": "15",
-    "toId": "16",
+    "_id": "68f0f7ea386ca6bc9bf8329a",
+    "fromUser": "68f0e2326c8c117327d34f30",
+    "toUser": "68f0e26a19d991c2c07cc134",
     "bookGiven": {
-      "title": "Moby-Dick",
-      "author": "Herman Melville"
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "ownerId": "68f0e2326c8c117327d34f2e"
     },
     "bookTaken": {
       "title": "Pride and Prejudice",
-      "author": "Jane Austen"
+      "author": "Jane Austen",
+      "ownerId": "68f0e2326c8c117327d34f3a"
     },
-    "timestamp": "2025-07-02T00:00:00Z"
+    "createdAt": "2025-10-16T13:49:30.289Z"
+  },
+  {
+    "_id": "68f0f7ea386ca6bc9bf8329b",
+    "fromUser": "68f0e2326c8c117327d34f3a",
+    "toUser": "68f0e2326c8c117327d34f3c",
+    "bookGiven": {
+      "title": "Park World",
+      "author": "Harper Lee",
+      "ownerId": "68f0e2326c8c117327d34f3a"
+    },
+    "bookTaken": {
+      "title": "Moby-Dick",
+      "author": "Herman Melville",
+      "ownerId": "68f0e2326c8c117327d34f3d"
+    },
+    "createdAt": "2025-10-16T13:49:30.289Z"
+  },
+  {
+    "_id": "68f0f7ea386ca6bc9bf8329c",
+    "fromUser": "68f0e2326c8c117327d34f37",
+    "toUser": "68f0e26a19d991c2c07cc134",
+    "bookGiven": {
+      "title": "Moby-Dick",
+      "author": "Herman Melville",
+      "ownerId": "68f0e2326c8c117327d34f3d"
+    },
+    "bookTaken": {
+      "title": "1984",
+      "author": "George Orwell",
+      "ownerId": "68f0e2326c8c117327d34f36"
+    },
+    "createdAt": "2025-10-16T13:49:30.289Z"
+  },
+  {
+    "_id": "68f0f7ea386ca6bc9bf8329d",
+    "fromUser": "68f0e2326c8c117327d34f34",
+    "toUser": "68f0e2326c8c117327d34f3f",
+    "bookGiven": {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "ownerId": "68f0e2326c8c117327d34f3f"
+    },
+    "bookTaken": {
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "ownerId": "68f0e2326c8c117327d34f2e"
+    },
+    "createdAt": "2025-10-16T13:49:30.289Z"
+  },
+  {
+    "_id": "68f0f7ea386ca6bc9bf8329e",
+    "fromUser": "68f0e2326c8c117327d34f2e",
+    "toUser": "68f0e2326c8c117327d34f2f",
+    "bookGiven": {
+      "title": "Jurassic Park",
+      "author": "Michael Crichton",
+      "ownerId": "68f0e2326c8c117327d34f3b"
+    },
+    "bookTaken": {
+      "title": "Jurassic Park",
+      "author": "Michael Crichton",
+      "ownerId": "68f0e2326c8c117327d34f34"
+    },
+    "createdAt": "2025-10-16T13:49:30.289Z"
+  },
+  {
+    "_id": "68f0f7ea386ca6bc9bf8329f",
+    "fromUser": "68f0e2326c8c117327d34f35",
+    "toUser": "68f0e2326c8c117327d34f3b",
+    "bookGiven": {
+      "title": "The Lost World",
+      "author": "Michael Crichton",
+      "ownerId": "68f0e2326c8c117327d34f35"
+    },
+    "bookTaken": {
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "ownerId": "68f0e2326c8c117327d34f3f"
+    },
+    "createdAt": "2025-10-16T13:49:30.289Z"
+  },
+  {
+    "_id": "68f0f7ea386ca6bc9bf832a0",
+    "fromUser": "68f0e2326c8c117327d34f36",
+    "toUser": "68f0e2326c8c117327d34f2d",
+    "bookGiven": {
+      "title": "Jurassic Park",
+      "author": "Michael Crichton",
+      "ownerId": "68f0e2326c8c117327d34f30"
+    },
+    "bookTaken": {
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "ownerId": "68f0e2326c8c117327d34f3f"
+    },
+    "createdAt": "2025-10-16T13:49:30.289Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706db9",
+    "fromUser": "68f0e2326c8c117327d34f2d",
+    "toUser": "68f0e2326c8c117327d34f36",
+    "bookGiven": {
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "ownerId": "68f0e2326c8c117327d34f2d"
+    },
+    "bookTaken": {
+      "title": "The Road",
+      "author": "Cormac McCarthy",
+      "ownerId": "68f0e2326c8c117327d34f36"
+    },
+    "createdAt": "2025-10-16T13:54:12.137Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dba",
+    "fromUser": "68f0e2326c8c117327d34f31",
+    "toUser": "68f0e2326c8c117327d34f2d",
+    "bookGiven": {
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "ownerId": "68f0e2326c8c117327d34f3f"
+    },
+    "bookTaken": {
+      "title": "Jurassic Park",
+      "author": "Michael Crichton",
+      "ownerId": "68f0e2326c8c117327d34f30"
+    },
+    "createdAt": "2025-10-16T13:54:12.137Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dbb",
+    "fromUser": "68f0e2326c8c117327d34f2d",
+    "toUser": "68f0e2326c8c117327d34f3d",
+    "bookGiven": {
+      "title": "The Girl with the Dragon Tattoo",
+      "author": "Stieg Larsson",
+      "ownerId": "68f0e2326c8c117327d34f2d"
+    },
+    "bookTaken": {
+      "title": "Moby-Dick",
+      "author": "Herman Melville",
+      "ownerId": "68f0e2326c8c117327d34f3d"
+    },
+    "createdAt": "2025-10-16T13:54:12.137Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dbc",
+    "fromUser": "68f0e26a19d991c2c07cc134",
+    "toUser": "68f0e2326c8c117327d34f2d",
+    "bookGiven": {
+      "title": "Fahrenheit 451",
+      "author": "Ray Bradbury",
+      "ownerId": "68f0e26a19d991c2c07cc134"
+    },
+    "bookTaken": {
+      "title": "Jurassic Park",
+      "author": "Michael Crichton",
+      "ownerId": "68f0e2326c8c117327d34f2d"
+    },
+    "createdAt": "2025-10-16T13:54:12.137Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dbd",
+    "fromUser": "68f0e2326c8c117327d34f2d",
+    "toUser": "68f0e2326c8c117327d34f36",
+    "bookGiven": {
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "ownerId": "68f0e2326c8c117327d34f2d"
+    },
+    "bookTaken": {
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "ownerId": "68f0e2326c8c117327d34f30"
+    },
+    "createdAt": "2025-10-16T13:54:12.137Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dbe",
+    "fromUser": "68f0e2326c8c117327d34f31",
+    "toUser": "68f0e2326c8c117327d34f3a",
+    "bookGiven": {
+      "title": "Jurassic Park",
+      "author": "Michael Crichton",
+      "ownerId": "68f0e2326c8c117327d34f31"
+    },
+    "bookTaken": {
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "ownerId": "68f0e2326c8c117327d34f2e"
+    },
+    "createdAt": "2025-10-16T13:54:12.137Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dbf",
+    "fromUser": "68f0e2326c8c117327d34f3f",
+    "toUser": "68f0e26a19d991c2c07cc134",
+    "bookGiven": {
+      "title": "1984",
+      "author": "George Orwell",
+      "ownerId": "68f0e2326c8c117327d34f3c"
+    },
+    "bookTaken": {
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "ownerId": "68f0e2326c8c117327d34f2e"
+    },
+    "createdAt": "2025-10-16T13:54:12.137Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dc0",
+    "fromUser": "68f0e2326c8c117327d34f37",
+    "toUser": "68f0e2326c8c117327d34f36",
+    "bookGiven": {
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "ownerId": "68f0e2326c8c117327d34f37"
+    },
+    "bookTaken": {
+      "title": "Moby-Dick",
+      "author": "Herman Melville",
+      "ownerId": "68f0e2326c8c117327d34f37"
+    },
+    "createdAt": "2025-10-16T13:54:12.137Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dc1",
+    "fromUser": "68f0e2326c8c117327d34f31",
+    "toUser": "68f0e2326c8c117327d34f36",
+    "bookGiven": {
+      "title": "Jurassic Park",
+      "author": "Michael Crichton",
+      "ownerId": "68f0e2326c8c117327d34f31"
+    },
+    "bookTaken": {
+      "title": "Moby-Dick",
+      "author": "Herman Melville",
+      "ownerId": "68f0e2326c8c117327d34f36"
+    },
+    "createdAt": "2025-10-16T13:54:12.137Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dc2",
+    "fromUser": "68f0e2326c8c117327d34f30",
+    "toUser": "68f0e2326c8c117327d34f37",
+    "bookGiven": {
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "ownerId": "68f0e2326c8c117327d34f30"
+    },
+    "bookTaken": {
+      "title": "The Handmaid's Tale",
+      "author": "Margaret Atwood",
+      "ownerId": "68f0e2326c8c117327d34f37"
+    },
+    "createdAt": "2025-10-16T13:54:12.137Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dc3",
+    "fromUser": "68f0e2326c8c117327d34f35",
+    "toUser": "68f0e2326c8c117327d34f3d",
+    "bookGiven": {
+      "title": "The Girl with the Dragon Tattoo",
+      "author": "Stieg Larsson",
+      "ownerId": "68f0e2326c8c117327d34f35"
+    },
+    "bookTaken": {
+      "title": "The Road",
+      "author": "Cormac McCarthy",
+      "ownerId": "68f0e2326c8c117327d34f3d"
+    },
+    "createdAt": "2025-10-16T13:54:12.137Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dc4",
+    "fromUser": "68f0e2326c8c117327d34f3b",
+    "toUser": "68f0e2326c8c117327d34f3e",
+    "bookGiven": {
+      "title": "Fahrenheit 451",
+      "author": "Ray Bradbury",
+      "ownerId": "68f0e2326c8c117327d34f33"
+    },
+    "bookTaken": {
+      "title": "Fahrenheit 451",
+      "author": "Ray Bradbury",
+      "ownerId": "68f0e2326c8c117327d34f38"
+    },
+    "createdAt": "2025-10-16T13:54:12.137Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dc5",
+    "fromUser": "68f0e2326c8c117327d34f40",
+    "toUser": "68f0e2326c8c117327d34f39",
+    "bookGiven": {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "ownerId": "68f0e2326c8c117327d34f37"
+    },
+    "bookTaken": {
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "ownerId": "68f0e2326c8c117327d34f3f"
+    },
+    "createdAt": "2025-10-16T13:54:12.137Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dc6",
+    "fromUser": "68f0e2326c8c117327d34f3f",
+    "toUser": "68f0e2326c8c117327d34f40",
+    "bookGiven": {
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "ownerId": "68f0e2326c8c117327d34f3f"
+    },
+    "bookTaken": {
+      "title": "The Kite Runner",
+      "author": "Khaled Hosseini",
+      "ownerId": "68f0e2326c8c117327d34f40"
+    },
+    "createdAt": "2025-10-16T13:54:12.138Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dc7",
+    "fromUser": "68f0e2326c8c117327d34f3b",
+    "toUser": "68f0e26a19d991c2c07cc134",
+    "bookGiven": {
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "ownerId": "68f0e2326c8c117327d34f33"
+    },
+    "bookTaken": {
+      "title": "Jurassic Park",
+      "author": "Michael Crichton",
+      "ownerId": "68f0e26a19d991c2c07cc134"
+    },
+    "createdAt": "2025-10-16T13:54:12.138Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dc8",
+    "fromUser": "68f0e2326c8c117327d34f2f",
+    "toUser": "68f0e2326c8c117327d34f38",
+    "bookGiven": {
+      "title": "A Game of Thrones",
+      "author": "George R.R. Martin",
+      "ownerId": "68f0e2326c8c117327d34f2f"
+    },
+    "bookTaken": {
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "ownerId": "68f0e2326c8c117327d34f2e"
+    },
+    "createdAt": "2025-10-16T13:54:12.138Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dc9",
+    "fromUser": "68f0e2326c8c117327d34f3e",
+    "toUser": "68f0e2326c8c117327d34f3f",
+    "bookGiven": {
+      "title": "Moby-Dick",
+      "author": "Herman Melville",
+      "ownerId": "68f0e2326c8c117327d34f3e"
+    },
+    "bookTaken": {
+      "title": "Jurassic Park",
+      "author": "Michael Crichton",
+      "ownerId": "68f0e2326c8c117327d34f3f"
+    },
+    "createdAt": "2025-10-16T13:54:12.138Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dca",
+    "fromUser": "68f0e2326c8c117327d34f30",
+    "toUser": "68f0e2326c8c117327d34f36",
+    "bookGiven": {
+      "title": "The Name of the Wind",
+      "author": "Patrick Rothfuss",
+      "ownerId": "68f0e2326c8c117327d34f30"
+    },
+    "bookTaken": {
+      "title": "Jurassic Park",
+      "author": "Michael Crichton",
+      "ownerId": "68f0e2326c8c117327d34f30"
+    },
+    "createdAt": "2025-10-16T13:54:12.138Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dcb",
+    "fromUser": "68f0e2326c8c117327d34f3d",
+    "toUser": "68f0e2326c8c117327d34f2d",
+    "bookGiven": {
+      "title": "Jurassic Park",
+      "author": "Michael Crichton",
+      "ownerId": "68f0e2326c8c117327d34f34"
+    },
+    "bookTaken": {
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "ownerId": "68f0e2326c8c117327d34f2e"
+    },
+    "createdAt": "2025-10-16T13:54:12.138Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dcc",
+    "fromUser": "68f0e2326c8c117327d34f34",
+    "toUser": "68f0e2326c8c117327d34f2f",
+    "bookGiven": {
+      "title": "The Kite Runner",
+      "author": "Khaled Hosseini",
+      "ownerId": "68f0e2326c8c117327d34f34"
+    },
+    "bookTaken": {
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "ownerId": "68f0e2326c8c117327d34f30"
+    },
+    "createdAt": "2025-10-16T13:54:12.138Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dcd",
+    "fromUser": "68f0e2326c8c117327d34f39",
+    "toUser": "68f0e2326c8c117327d34f33",
+    "bookGiven": {
+      "title": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "ownerId": "68f0e2326c8c117327d34f39"
+    },
+    "bookTaken": {
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "ownerId": "68f0e2326c8c117327d34f33"
+    },
+    "createdAt": "2025-10-16T13:54:12.138Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dce",
+    "fromUser": "68f0e2326c8c117327d34f40",
+    "toUser": "68f0e2326c8c117327d34f3d",
+    "bookGiven": {
+      "title": "A Game of Thrones",
+      "author": "George R.R. Martin",
+      "ownerId": "68f0e2326c8c117327d34f40"
+    },
+    "bookTaken": {
+      "title": "The Road",
+      "author": "Cormac McCarthy",
+      "ownerId": "68f0e2326c8c117327d34f3d"
+    },
+    "createdAt": "2025-10-16T13:54:12.138Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dcf",
+    "fromUser": "68f0e2326c8c117327d34f38",
+    "toUser": "68f0e2326c8c117327d34f2d",
+    "bookGiven": {
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "ownerId": "68f0e2326c8c117327d34f3b"
+    },
+    "bookTaken": {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "ownerId": "68f0e2326c8c117327d34f3e"
+    },
+    "createdAt": "2025-10-16T13:54:12.138Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dd0",
+    "fromUser": "68f0e2326c8c117327d34f36",
+    "toUser": "68f0e2326c8c117327d34f2e",
+    "bookGiven": {
+      "title": "Moby-Dick",
+      "author": "Herman Melville",
+      "ownerId": "68f0e2326c8c117327d34f36"
+    },
+    "bookTaken": {
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "ownerId": "68f0e2326c8c117327d34f2e"
+    },
+    "createdAt": "2025-10-16T13:54:12.138Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dd1",
+    "fromUser": "68f0e2326c8c117327d34f34",
+    "toUser": "68f0e2326c8c117327d34f3f",
+    "bookGiven": {
+      "title": "The Road",
+      "author": "Cormac McCarthy",
+      "ownerId": "68f0e2326c8c117327d34f34"
+    },
+    "bookTaken": {
+      "title": "Fahrenheit 451",
+      "author": "Ray Bradbury",
+      "ownerId": "68f0e2326c8c117327d34f3f"
+    },
+    "createdAt": "2025-10-16T13:54:12.138Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dd2",
+    "fromUser": "68f0e2326c8c117327d34f2f",
+    "toUser": "68f0e2326c8c117327d34f2e",
+    "bookGiven": {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "ownerId": "68f0e2326c8c117327d34f2d"
+    },
+    "bookTaken": {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "ownerId": "68f0e2326c8c117327d34f40"
+    },
+    "createdAt": "2025-10-16T13:54:12.138Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dd3",
+    "fromUser": "68f0e2326c8c117327d34f37",
+    "toUser": "68f0e2326c8c117327d34f35",
+    "bookGiven": {
+      "title": "Jurassic Park",
+      "author": "Michael Crichton",
+      "ownerId": "68f0e2326c8c117327d34f30"
+    },
+    "bookTaken": {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "ownerId": "68f0e2326c8c117327d34f3f"
+    },
+    "createdAt": "2025-10-16T13:54:12.138Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dd4",
+    "fromUser": "68f0e2326c8c117327d34f33",
+    "toUser": "68f0e2326c8c117327d34f32",
+    "bookGiven": {
+      "title": "Jurassic Park",
+      "author": "Michael Crichton",
+      "ownerId": "68f0e2326c8c117327d34f34"
+    },
+    "bookTaken": {
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "ownerId": "68f0e2326c8c117327d34f36"
+    },
+    "createdAt": "2025-10-16T13:54:12.138Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dd5",
+    "fromUser": "68f0e2326c8c117327d34f3d",
+    "toUser": "68f0e2326c8c117327d34f3c",
+    "bookGiven": {
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "ownerId": "68f0e2326c8c117327d34f3d"
+    },
+    "bookTaken": {
+      "title": "Fahrenheit 451",
+      "author": "Ray Bradbury",
+      "ownerId": "68f0e2326c8c117327d34f38"
+    },
+    "createdAt": "2025-10-16T13:54:12.138Z"
+  },
+  {
+    "_id": "68f0f9046fec2fdb13706dd6",
+    "fromUser": "68f0e2326c8c117327d34f37",
+    "toUser": "68f0e2326c8c117327d34f39",
+    "bookGiven": {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "ownerId": "68f0e2326c8c117327d34f3e"
+    },
+    "bookTaken": {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "ownerId": "68f0e2326c8c117327d34f2f"
+    },
+    "createdAt": "2025-10-16T13:54:12.138Z"
   }
 ]

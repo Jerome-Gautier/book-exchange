@@ -15,10 +15,10 @@ export const load: LayoutServerLoad = async ({ locals }) => {
 				: null;
 
 			const matchField = oid ? oid : userId;
+			// count number of requestedBooks entries that target the current user's books
 			const agg = await RequestModel.aggregate([
-				{ $unwind: '$requestBooks' },
+				{ $unwind: '$requestedBooks' },
 				{ $match: { 'requestedBooks.owner': matchField } },
-				{ $group: { _id: '$requestedBooks.book' } },
 				{ $count: 'count' }
 			]).exec();
 
@@ -28,7 +28,7 @@ export const load: LayoutServerLoad = async ({ locals }) => {
 			requestsCount = 0;
 		}
 	}
-  
+	
 	return {
 		session,
 		requestsCount

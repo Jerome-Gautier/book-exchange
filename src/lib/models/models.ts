@@ -7,7 +7,7 @@ export type Book = {
 };
 
 export type BookOwner = {
-    id: string;
+    _id: string;
     location: string;
     username: string;
 }
@@ -21,7 +21,7 @@ export type UserDocument = {
 };
 
 export type User = {
-    id: string;
+    _id: string;
     username: string;
     fullname: string;
     email: string;
@@ -36,14 +36,24 @@ export type UserBook = {
 };
 
 export type BookRequest = {
-    id: string;
-    fromUserId: string;
-    offeredBooksIds: string[];
+    _id: string;
+    fromUser: string;
+    offeredBooks: string[];
     requestedBooks: RequestedBook[];
-    createdAt: string;
+}
+
+export type OfferedBook= {
+    _id: string;
+    title: string;
+    author: string;
+    condition: string;
+    ownerId: string;
+    status: string;
+    ownerDetails: User;
+    requests: string[];
 }
 
 export type RequestedBook = {
-    id: string;
-    ownerId: string;
+    book: Book;
+    owner: User;
 }

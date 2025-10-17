@@ -11,7 +11,7 @@ const BookSchema = new mongoose.Schema(
 	{
 		toObject: {
 			virtuals: true,
-			transform(_doc: any, ret: any) {
+			transform(_doc, ret: any) {
 				// remove the populated requests payload from JSON output
 				delete ret.requests;
 				return ret;
@@ -19,7 +19,7 @@ const BookSchema = new mongoose.Schema(
 		},
 		toJSON: {
 			virtuals: true,
-			transform(_doc: any, ret: any) {
+			transform(_doc, ret: any) {
 				delete ret.requests;
 				return ret;
 			}
@@ -75,7 +75,7 @@ function autoPopulateRequests(this: any, next: any) {
 	this.populate([
 		{
 			path: 'requests',
-			select: 'fromUser requestedBooks', // minimal
+			select: 'fromUser', // minimal
 			populate: { path: 'fromUser', select: 'username' }
 		},
 		{

@@ -25,20 +25,20 @@
         const title = form.title;
         const author = form.author;
         const condition = form.condition;
-        const userId = user?.id;
+        const ownerId = user?.id;
 
         const response = await fetch(`/api/books`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ title, author, condition, userId })
+            body: JSON.stringify({ title, author, condition, ownerId })
         });
 
         const data = await response.json();
 
         if (response.ok) {
-            books.push(data.newBook);
+            books.push(data.book);
             form.title = '';
             form.author = '';
             form.condition = '';
@@ -125,16 +125,6 @@
                     </div>
                 </div>
                 <div class="text-right flex flex-col items-end gap-2">
-                    {#if book.requests && book.requests.length >= 1}
-                    <a href={`/books/${book.id}/requests`}><span class="text-blue-500 hover:text-blue-800 font-semibold">Requests</span> <span class="bg-black text-white px-2 rounded-full">{book.requests.length}</span></a>
-                    <p>
-                        ({#each book.requests as trade, index}
-                            <a class="text-blue-500 hover:text-blue-800" href={`/users/${trade.fromUser.id}`}>{trade.fromUser.username}</a>
-                            {#if index < book.requests.length - 1}
-                            <span class="mr-2">,</span>{/if}
-                        {/each})
-                    </p>
-                    {/if}
                     <button
                         class="mt-2 bg-red-500 hover:bg-red-700 text-white px-3 py-1 rounded transition cursor-pointer"
                         onclick={() => handleDeleteBook(book._id)}

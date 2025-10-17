@@ -41,12 +41,12 @@ import type { Book } from '$lib/models/models.js';
             </div>
             <div class="text-right">
                 {#if book.requests && book.requests.length >= 1}
-                <a href={`/books/${book.id}/requests`}><span class="text-blue-500 hover:text-blue-800 font-semibold">Requests</span> <span class="bg-black text-white px-2 rounded-full">{book.requests.length}</span></a>
+                <a href={`/books/${book._id}/requests`}><span class="text-blue-500 hover:text-blue-800 font-semibold">Requests</span> <span class="bg-black text-white px-2 rounded-full">{book.requests.length}</span></a>
                 <p>
                     ({#each book.requests as trade, index}
-                        <a class="text-blue-500 hover:text-blue-800" href={`/users/${trade.fromUser.id}`}>{trade.fromUser.username}</a>
-                        {#if index < book.requests.length - 1}
-                        <span class="mr-2">,</span>{/if}
+                        <a class="text-blue-500 hover:text-blue-800" href={`/users/${trade.fromUser._id}`}>
+                            {trade.fromUser.username}
+                        </a>{#if index < book.requests.length - 1}<span class="mr-1">,</span>{/if}
                     {/each})
                 </p>
                 {/if}
