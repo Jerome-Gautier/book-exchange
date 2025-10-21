@@ -2,6 +2,7 @@
     let { data } = $props();
     
     const { users } = data || [];
+    console.log(users[0])
 </script>
 
 <div class="max-w-3xl mx-auto mt-10">
@@ -11,7 +12,8 @@
             <div class="bg-white rounded-lg shadow border border-gray-200 p-6 flex flex-col">
                 <div class="mb-4">
                     <a href={`/users/${user._id}`} class="text-xl font-semibold text-blue-600 hover:underline">{user.username}</a>
-                    <p class="text-gray-500">Location: {user.location}</p>
+                    <p class="text-gray-500">City: {user.city}</p>
+                    <p class="text-gray-500">State: {user.state}</p>
                 </div>
                 <div class="flex flex-row gap-2 mt-4 md:mt-0">
                     {#if user.bookCount > 0}

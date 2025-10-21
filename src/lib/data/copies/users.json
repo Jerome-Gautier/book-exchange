@@ -4,149 +4,169 @@
     "username": "jessica.carter",
     "fullname": "Jessica Carter",
     "email": "jessica.carter@example.com",
-    "location": "Los Angeles, CA"
+    "city": "Los Angeles",
+    "state": "CA"
   },
   {
     "_id": "68f0e2326c8c117327d34f2e",
     "username": "michael.thompson",
     "fullname": "Michael Thompson",
     "email": "michael.thompson@example.com",
-    "location": "Austin, TX"
+    "city": "Austin",
+    "state": "TX"
   },
   {
     "_id": "68f0e2326c8c117327d34f2f",
     "username": "emily.nguyen",
     "fullname": "Emily Nguyen",
     "email": "emily.nguyen@example.com",
-    "location": "New York, NY"
+    "city": "New York",
+    "state": "NY"
   },
   {
     "_id": "68f0e2326c8c117327d34f30",
     "username": "david.kim",
     "fullname": "David Kim",
     "email": "david.kim@example.com",
-    "location": "San Francisco, CA"
+    "city": "San Francisco",
+    "state": "CA"
   },
   {
     "_id": "68f0e2326c8c117327d34f31",
     "username": "sophia.martinez",
     "fullname": "Sophia Martinez",
     "email": "sophia.martinez@example.com",
-    "location": "Los Angeles, CA"
+    "city": "Los Angeles",
+    "state": "CA"
   },
   {
     "_id": "68f0e2326c8c117327d34f32",
     "username": "chris.lee",
     "fullname": "Christopher Lee",
     "email": "chris.lee@example.com",
-    "location": "San Francisco, CA"
+    "city": "San Francisco",
+    "state": "CA"
   },
   {
     "_id": "68f0e2326c8c117327d34f33",
     "username": "olivia.johnson",
     "fullname": "Olivia Johnson",
     "email": "olivia.johnson@example.com",
-    "location": "Denver, CO"
+    "city": "Denver",
+    "state": "CO"
   },
   {
     "_id": "68f0e2326c8c117327d34f34",
     "username": "matthew.perez",
     "fullname": "Matthew Perez",
     "email": "matt.perez@example.com",
-    "location": "Miami, FL"
+    "city": "Miami",
+    "state": "FL"
   },
   {
     "_id": "68f0e2326c8c117327d34f35",
     "username": "ava.robinson",
     "fullname": "Ava Robinson",
     "email": "ava.robinson@example.com",
-    "location": "New York, NY"
+    "city": "New York",
+    "state": "NY"
   },
   {
     "_id": "68f0e2326c8c117327d34f36",
     "username": "dan.smith",
     "fullname": "Daniel Smith",
     "email": "dan.smith@example.com",
-    "location": "Los Angeles, CA"
+    "city": "Los Angeles",
+    "state": "CA"
   },
   {
     "_id": "68f0e2326c8c117327d34f37",
     "username": "mia.clark",
     "fullname": "Mia Clark",
     "email": "mia.clark@example.com",
-    "location": "Chicago, IL"
+    "city": "Chicago",
+    "state": "IL"
   },
   {
     "_id": "68f0e2326c8c117327d34f38",
     "username": "ben.wright",
     "fullname": "Benjamin Wright",
     "email": "ben.wright@example.com",
-    "location": "Los Angeles, CA"
+    "city": "Los Angeles",
+    "state": "CA"
   },
   {
     "_id": "68f0e2326c8c117327d34f39",
     "username": "ella.king",
     "fullname": "Ella King",
     "email": "ella.king@example.com",
-    "location": "Seattle, WA"
+    "city": "Seattle",
+    "state": "WA"
   },
   {
     "_id": "68f0e2326c8c117327d34f3a",
     "username": "will.scott",
     "fullname": "William Scott",
     "email": "will.scott@example.com",
-    "location": "Seattle, WA"
+    "city": "Seattle",
+    "state": "WA"
   },
   {
     "_id": "68f0e2326c8c117327d34f3b",
     "username": "grace.turner",
     "fullname": "Grace Turner",
     "email": "grace.turner@example.com",
-    "location": "Austin, TX"
+    "city": "Austin",
+    "state": "TX"
   },
   {
     "_id": "68f0e2326c8c117327d34f3c",
     "username": "henry.adams",
     "fullname": "Henry Adams",
     "email": "henry.adams@example.com",
-    "location": "Portland, OR"
+    "city": "Portland",
+    "state": "OR"
   },
   {
     "_id": "68f0e2326c8c117327d34f3d",
     "username": "chloe.baker",
     "fullname": "Chloe Baker",
     "email": "chloe.baker@example.com",
-    "location": "New York, NY"
+    "city": "New York",
+    "state": "NY"
   },
   {
     "_id": "68f0e2326c8c117327d34f3e",
     "username": "jack.murphy",
     "fullname": "Jack Murphy",
     "email": "jack.murphy@example.com",
-    "location": "Denver, CO"
+    "city": "Denver",
+    "state": "CO"
   },
   {
     "_id": "68f0e2326c8c117327d34f3f",
     "username": "lily.evans",
     "fullname": "Lily Evans",
     "email": "lily.evans@example.com",
-    "location": "Chicago, IL"
+    "city": "Chicago",
+    "state": "IL"
   },
   {
     "_id": "68f0e2326c8c117327d34f40",
     "username": "sam.foster",
     "fullname": "Samuel Foster",
     "email": "sam.foster@example.com",
-    "location": "Portland, OR"
+    "city": "Portland",
+    "state": "OR"
   },
   {
     "_id": "68f0e26a19d991c2c07cc134",
     "username": "JGautier",
     "fullname": "Jerôme Gautier",
     "email": "jerome.gautier92@gmail.com",
-    "location": "Isla Sorna",
     "createdAt": "2025-10-16T12:17:46.169Z",
-    "updatedAt": "2025-10-16T13:45:25.761Z",
-    "__v": 0
+    "updatedAt": "2025-10-20T09:42:57.821Z",
+    "__v": 0,
+    "city": "Isla Sorna"
   }
 ]

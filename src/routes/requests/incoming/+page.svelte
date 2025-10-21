@@ -1,10 +1,12 @@
 <script lang="ts">
+	import type { OfferedBook, RequestedBook } from '$lib/models/models.js';
+
     const { data } = $props();
     const userId = data.userId;
 
     let tradeOffers = $state(data.tradeOffers || []);
 
-    const handleAcceptTrade = async (requestId: number, offeredBook: any, requestedBook: any, index: number) => {
+    const handleAcceptTrade = async (requestId: string, offeredBook: OfferedBook, requestedBook: RequestedBook, index: number) => {
         const requestObject = {
             userId,
             requestId,
@@ -22,6 +24,7 @@
 
         if (response.ok) {
             alert('Trade accepted successfully!');
+            window.location.reload();
         } else {
             alert('Failed to accept request. Please try again.');
         }

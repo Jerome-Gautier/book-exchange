@@ -18,7 +18,8 @@ export async function POST({ request }: RequestEvent) {
             username: existing.username,
             fullname: existing.fullname,
             email: existing.email,
-            location: existing.location
+            city: existing.city,
+            state: existing.state
         } }), { status: 409 });
     }
 
@@ -27,7 +28,8 @@ export async function POST({ request }: RequestEvent) {
         username: newUser.name || newUser.username,
         fullname: newUser.fullname || 'Unknown',
         email: newUser.email,
-        location: newUser.location || 'Unknown'
+        city: newUser.city || 'Unknown',
+        state: newUser.state || 'Unknown'
     });
 
     // return created user (normalize id to string)
@@ -36,7 +38,8 @@ export async function POST({ request }: RequestEvent) {
         username: created.username,
         fullname: created.fullname,
         email: created.email,
-        location: created.location
+        city: created.city,
+        state: created.state
     };
 
     return new Response(JSON.stringify({ success: true, user: userOut }), { status: 201 });

@@ -19,24 +19,18 @@ export async function load({ fetch, locals }) {
         requestId: string;
         offeredBook: OfferedBook;
         requestedBook: RequestedBook;
-        requester: {
-            _id: string;
-            key: string;
-        };
     }
 
     const tradeOffers: TradeOffer[] = [];
-    console.log(requests[0].requestedBooks[0].book.requests)
 
     requests.forEach((req: BookRequest) => {
         req.offeredBooks.forEach((offeredBook) => {
             req.requestedBooks.forEach((requestedBook) => {
-                if (requestedBook.owner._id !== session?.user?.id) return; // Ensure the requested book belongs to the current user    
+                if (requestedBook.owner._id !== session?.user?.id) return;  
                 tradeOffers.push({
                     requestId: req._id,
                     offeredBook,
-                    requestedBook,
-                    requester: req.requester
+                    requestedBook
                 });
             });
         });

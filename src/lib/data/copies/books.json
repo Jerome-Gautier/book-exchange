@@ -318,5 +318,21 @@
     "condition": "good",
     "ownerId": "68f0e2326c8c117327d34f40",
     "status": "available"
+  },
+  {
+    "_id": "68f110e35ac2aac9d0c5e43e",
+    "title": "The Lost World",
+    "author": "Michael Cricthon",
+    "condition": "good",
+    "ownerId": "68f0e26a19d991c2c07cc134",
+    "__v": 0
+  },
+  {
+    "_id": "68f110ed5ac2aac9d0c5e441",
+    "title": "Jurassic Park",
+    "author": "Michael Cricthon",
+    "condition": "new",
+    "ownerId": "68f0e26a19d991c2c07cc134",
+    "__v": 0
   }
 ]

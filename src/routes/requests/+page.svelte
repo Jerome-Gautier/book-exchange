@@ -39,9 +39,9 @@
                 {#if userId === request.fromUser._id}
                     <button onclick={() => handleDelete(request._id, index)} class="absolute top-2 right-2 cursor-pointer bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded shadow transition font-semibold text-sm">Cancel request</button>
                 {/if}
-                <div class="flex flex-row">
+                <div class="flex flex-col lg:flex-row lg:gap-0 gap-4">
                     <!-- Gives -->
-                    <div class="w-1/2 pr-4 border-r border-gray-300">
+                    <div class="lg:w-1/2 w-full lg:pr-4 lg:border-r lg:border-gray-300">
                         <div class="mb-2">
                             <a href={`/users/${request.fromUser._id}`} class="text-blue-600 hover:underline font-medium">{request.fromUser.username}</a>
                             <span class="text-gray-600"> wants to give:</span>
@@ -57,7 +57,7 @@
                         {/if}
                     </div>
                     <!-- Takes -->
-                    <div class="w-1/2 pl-4">
+                    <div class="lg:w-1/2 w-full lg:pl-4">
                         <div class="mb-2">
                             <span class="text-gray-600">and wants to take:</span>
                         </div>

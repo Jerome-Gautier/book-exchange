@@ -58,7 +58,8 @@ export async function GET() {
 				username: 1,
 				fullname: 1,
 				email: 1,
-				location: 1,
+				city: 1,
+				state: 1,
 				createdAt: 1,
 				updatedAt: 1,
 				bookCount: 1,
@@ -113,9 +114,9 @@ export async function PUT({ request, locals }) {
 			return new Response(JSON.stringify({ error: 'Forbidden' }), { status: 403 });
 		}
 
-		const { username, fullname, email, location } = updatedUser;
+		const { username, fullname, email, city, state } = updatedUser;
 
-		if (!username || !fullname || !email || !location) {
+		if (!username || !fullname || !email || !city || !state) {
 			return new Response(JSON.stringify({ error: 'All fields are required' }), { status: 400 });
 		}
 
@@ -125,7 +126,8 @@ export async function PUT({ request, locals }) {
 				username,
 				fullname,
 				email,
-				location
+				city,
+				state
 			},
 			{ new: true }
 		)

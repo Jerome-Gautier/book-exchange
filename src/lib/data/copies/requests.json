@@ -524,5 +524,80 @@
     ],
     "status": "open",
     "createdAt": "2025-10-16T13:34:09.598Z"
+  },
+  {
+    "_id": "68f6043fc3de8d488fbd0f74",
+    "fromUser": "68f0e26a19d991c2c07cc134",
+    "offeredBooks": [
+      "68f110e35ac2aac9d0c5e43e",
+      "68f110ed5ac2aac9d0c5e441"
+    ],
+    "requestedBooks": [
+      {
+        "book": "68f0e47bd1823592143feddc",
+        "owner": "68f0e2326c8c117327d34f2d"
+      },
+      {
+        "book": "68f0e47bd1823592143feddd",
+        "owner": "68f0e2326c8c117327d34f2e"
+      },
+      {
+        "book": "68f0e47fd1823592143fee01",
+        "owner": "68f0e2326c8c117327d34f40"
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "68f6079106b6b8ea155be025",
+    "fromUser": "68f0e2326c8c117327d34f2f",
+    "offeredBooks": [
+      "68f0e47bd1823592143fede0",
+      "68f0e47bd1823592143feddf"
+    ],
+    "requestedBooks": [
+      {
+        "book": "68f110ed5ac2aac9d0c5e441",
+        "owner": "68f0e26a19d991c2c07cc134"
+      },
+      {
+        "book": "68f0e47bd1823592143feddd",
+        "owner": "68f0e2326c8c117327d34f2e"
+      },
+      {
+        "book": "68f0e47dd1823592143fedf1",
+        "owner": "68f0e2326c8c117327d34f38"
+      },
+      {
+        "book": "68f0e47dd1823592143fedee",
+        "owner": "68f0e2326c8c117327d34f36"
+      }
+    ]
+  },
+  {
+    "_id": "68f6079106b6b8ea155be026",
+    "fromUser": "68f0e2326c8c117327d34f35",
+    "offeredBooks": [
+      "68f0e47dd1823592143fedec",
+      "68f0e47dd1823592143fedeb"
+    ],
+    "requestedBooks": [
+      {
+        "book": "68f110ed5ac2aac9d0c5e441",
+        "owner": "68f0e26a19d991c2c07cc134"
+      },
+      {
+        "book": "68f0e47bd1823592143feddc",
+        "owner": "68f0e2326c8c117327d34f2d"
+      },
+      {
+        "book": "68f0e47bd1823592143fede0",
+        "owner": "68f0e2326c8c117327d34f2f"
+      },
+      {
+        "book": "68f0e47cd1823592143fede5",
+        "owner": "68f0e2326c8c117327d34f32"
+      }
+    ]
   }
 ]

@@ -3,8 +3,8 @@ import './User';
 
 const TradeBookSubSchema = new mongoose.Schema(
   {
-    title: { type: String },
-    author: { type: String },
+    title: { type: String, required: true },
+    author: { type: String, required: true },
     ownerId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
   },
   { _id: false }
